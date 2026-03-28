@@ -1,0 +1,224 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="Direction de travaux — Coordination de chantier | Urben Construction"
+  description="Vous avez un projet de rénovation mais pas le temps de tout gérer ? Urben Construction coordonne vos artisans, suit les délais et vous rend compte chaque semaine. District de Morges."
+>
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="bg-gray-900 text-white pt-48 pb-20">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-end">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Formule 02 — Direction de travaux</p>
+          <h1 class="text-4xl md:text-6xl font-black leading-tight">
+            Votre projet,<br />sans la charge<br />de gestion.
+          </h1>
+          <div class="flex flex-wrap gap-4 mt-10">
+            <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+              <span>Discuter de mon projet</span>
+            </a>
+          </div>
+        </div>
+        <div class="border border-white/10 rounded-2xl p-8 space-y-4">
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-6">Vous vous posez ces questions ?</p>
+          {[
+            'Par où commencer mon projet ?',
+            'Comment trouver des artisans fiables ?',
+            'Qui va coordonner tout ça ?',
+            'Comment éviter les mauvaises surprises ?',
+          ].map(q => (
+            <p class="text-gray-300 flex items-start gap-3">
+              <span class="text-[#FF7500] font-bold flex-shrink-0 mt-0.5">?</span>
+              {q}
+            </p>
+          ))}
+          <p class="text-white font-semibold pt-2 border-t border-white/10">C'est notre métier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO + PHOTO -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Notre rôle</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Un chef d'orchestre<br />sur votre chantier.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Vous nous confiez la coordination complète de votre projet. On sélectionne les artisans, on suit les délais, on gère les imprévus — et on vous tient informé à chaque étape.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Votre seule obligation : valider les étapes clés et régler les acomptes à l'avancement. On s'occupe du reste.
+          </p>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden bg-gray-100">
+          <img
+            src="/images/direction-travaux.jpg"
+            alt="Direction de travaux chantier district de Morges"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QU'ON FAIT -->
+  <section class="py-24 bg-white border-t border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Ce qu'on fait pour vous</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 max-w-2xl">On gère. Vous décidez.</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            phase: 'Avant le chantier',
+            items: [
+              'Analyse de vos besoins et faisabilité',
+              'Établissement du cahier des charges',
+              'Sélection des artisans (notre réseau)',
+              'Consolidation des devis',
+              'Planning prévisionnel',
+              'Demandes d\'autorisations si nécessaire',
+            ],
+          },
+          {
+            phase: 'Pendant le chantier',
+            items: [
+              'Coordination quotidienne des artisans',
+              'Suivi qualité et respect des délais',
+              'Gestion des imprévus',
+              'Communication régulière avec vous',
+              'Compte-rendu hebdomadaire avec photos',
+              'Validation des étapes avant paiement',
+            ],
+          },
+          {
+            phase: 'Après le chantier',
+            items: [
+              'Réception des travaux avec vous',
+              'Levée des réserves',
+              'Garanties et SAV',
+              'Accompagnement post-livraison',
+            ],
+          },
+        ].map(phase => (
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-10 h-0.5 bg-[#FF7500] mb-6"></div>
+            <h3 class="font-bold text-sm uppercase tracking-wide mb-5">{phase.phase}</h3>
+            <ul class="space-y-3">
+              {phase.items.map(item => (
+                <li class="flex gap-3 items-start text-sm text-gray-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#FF7500] flex-shrink-0 mt-1.5"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFICATION -->
+  <section class="py-20 bg-white border-t border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Tarification</p>
+          <h2 class="text-3xl font-bold mb-6">Un honoraire clair,<br />défini ensemble.</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Notre honoraire est défini selon la nature et l'ampleur de votre projet — et clairement séparé des prestations des artisans dans le contrat.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-8">
+            Tous les devis artisans vous sont transmis tels quels. Aucune marge cachée sur les sous-traitants.
+          </p>
+          <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>Discuter de mon projet</span>
+          </a>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-10">
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-6">Ce qui est toujours inclus</p>
+          <ul class="space-y-4">
+            {[
+              'Honoraire défini et fixé avant le démarrage',
+              'Devis artisans transmis sans marge',
+              'Contrat détaillant clairement les responsabilités',
+              'Facturation selon les étapes convenues',
+            ].map(item => (
+              <li class="flex gap-3 text-sm text-gray-700">
+                <span class="text-[#FF7500] font-bold flex-shrink-0">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POUR QUI -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Pour qui</p>
+      <h2 class="text-3xl font-bold mb-12 max-w-xl">Il suffit d'une de ces situations pour que cette formule vous corresponde.</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
+        {[
+          'Vous avez un projet de rénovation mais pas d\'architecte.',
+          'Vous n\'avez pas le temps de gérer vous-même plusieurs artisans.',
+          'Vous avez déjà eu de mauvaises expériences avec des chantiers mal coordonnés.',
+          'Vous voulez quelqu\'un de confiance qui défend vos intérêts sur le chantier.',
+        ].map(item => (
+          <div class="flex gap-4 bg-white rounded-2xl p-6">
+            <span class="text-[#FF7500] font-black flex-shrink-0 mt-0.5">—</span>
+            <p class="text-gray-700 text-sm leading-relaxed">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTRES FORMULES -->
+  <section class="py-16 bg-white border-b border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-8">Nos autres formules</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/services/execution" class="group bg-gray-50 rounded-2xl p-8 flex items-center justify-between hover:shadow-md transition-shadow">
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-1">Formule 01</p>
+            <h3 class="text-xl font-bold group-hover:text-[#FF7500] transition-colors">Exécution seule</h3>
+            <p class="text-gray-500 text-sm mt-1">Maçonnerie & gros œuvre selon vos plans</p>
+          </div>
+          <span class="text-[#FF7500] font-black text-xl">→</span>
+        </a>
+        <a href="/services/cle-en-main" class="group bg-gray-50 rounded-2xl p-8 flex items-center justify-between hover:shadow-md transition-shadow">
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-1">Formule 03 — Notre formule star</p>
+            <h3 class="text-xl font-bold group-hover:text-[#FF7500] transition-colors">Accompagnement global</h3>
+            <p class="text-gray-500 text-sm mt-1">Clé en main, de A à Z</p>
+          </div>
+          <span class="text-[#FF7500] font-black text-xl">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">On parle de votre projet ?</h2>
+      <p class="text-gray-400 mb-10">Première consultation gratuite. Pas d'engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Prendre contact</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

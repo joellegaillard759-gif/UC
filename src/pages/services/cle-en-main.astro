@@ -1,0 +1,224 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="Accompagnement global clé en main — Urben Construction"
+  description="De la première visite à la livraison, un seul contrat et un seul interlocuteur. Maçonnerie, coordination, artisans, garanties. District de Morges."
+>
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="bg-gray-900 text-white pt-48 pb-20">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500]">Formule 03</p>
+        <span class="bg-[#FF7500] text-white text-xs font-bold px-2 py-0.5 uppercase tracking-wide rounded-sm">Notre formule star</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        De A à Z.<br />Un seul contrat.
+      </h1>
+      <p class="text-gray-400 mt-6 text-lg max-w-xl">
+        Vous déléguez tout. On s'occupe de la maçonnerie et on coordonne tous les corps de métier.
+        Paiements échelonnés selon l'avancement réel.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander une visite gratuite</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPE -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Le principe</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Un interlocuteur unique,<br />de la conception à la livraison.</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Vous nous confiez votre projet complet. On réalise la maçonnerie — notre cœur de métier — et on coordonne tous les autres corps de métier : électricité, plomberie, carrelage, peinture, menuiserie.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-10">
+            Pas de ping-pong entre artisans. Pas de devis qui s'accumulent. Un seul contrat, une seule responsabilité.
+          </p>
+          <div class="space-y-3">
+            {[
+              'On absorbe les imprévus — vous n\'en entendez pas parler',
+              'Vous validez les étapes clés — on exécute le reste',
+              'Vous payez en 4 fois selon l\'avancement réel — chaque acompte correspond à une étape terminée',
+            ].map(item => (
+              <div class="flex gap-3 text-sm text-gray-700">
+                <span class="text-[#FF7500] font-bold flex-shrink-0">—</span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden bg-gray-100">
+          <img src="/images/maison.avif" alt="Accompagnement global chantier district de Morges" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 ÉTAPES -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Comment ça se passe</p>
+      <h2 class="text-3xl font-bold mb-12">Quatre étapes, zéro surprise.</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        {[
+          {
+            n: '01',
+            title: 'Visite & budget',
+            text: 'On vient sur place analyser votre projet. Budget prévisionnel remis sous 2 à 3 semaines. Gratuit et sans engagement.',
+          },
+          {
+            n: '02',
+            title: 'Avant-projet',
+            text: 'Plans de principe, sélection des artisans, devis détaillé et planning précis. Vous validez tout avant le démarrage.',
+          },
+          {
+            n: '03',
+            title: 'Réalisation',
+            text: 'On gère tout : commandes, artisans, qualité, délais. Compte-rendu hebdomadaire. Paiements échelonnés selon avancement visible.',
+          },
+          {
+            n: '04',
+            title: 'Livraison',
+            text: 'Réception complète avec vous, levée des réserves, garanties 2 à 10 ans selon travaux. On reste disponible pour le SAV.',
+          },
+        ].map(e => (
+          <div class="bg-white rounded-2xl p-8">
+            <p class="text-4xl font-black text-gray-200 mb-4">{e.n}</p>
+            <h3 class="font-bold mb-3">{e.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{e.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- EXEMPLE CONCRET -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Exemple concret</p>
+      <h2 class="text-3xl font-bold mb-12">Rénovation complète — appartement 4.5 pièces</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Décomposition budget -->
+        <div class="bg-gray-900 text-white rounded-2xl p-10">
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-6">Décomposition du budget</p>
+          <div class="space-y-3 text-sm mb-6">
+            {[
+              ['Démolition + maçonnerie (nous)', 'CHF 30\'000'],
+              ['Électricité', 'CHF 15\'000'],
+              ['Plomberie', 'CHF 12\'000'],
+              ['Carrelage', 'CHF 8\'000'],
+              ['Peinture', 'CHF 6\'000'],
+              ['Conseil & coordination (nous)', 'CHF 9\'000'],
+            ].map(([label, amount]) => (
+              <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                <span class="text-gray-300">{label}</span>
+                <span class="font-bold">{amount}</span>
+              </div>
+            ))}
+            <div class="flex justify-between items-center pt-2">
+              <span class="font-bold">Total</span>
+              <span class="text-xl font-black text-[#FF7500]">CHF 80\'000</span>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">Tous les devis artisans sont transmis tels quels. Aucune marge cachée.</p>
+        </div>
+
+        <!-- Paiements échelonnés -->
+        <div class="bg-gray-50 rounded-2xl p-10">
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-6">Paiements échelonnés</p>
+          <div class="space-y-4">
+            {[
+              { jalon: 'Signature', pct: '20%', montant: 'CHF 16\'000', detail: 'Avant-projet + démarrage' },
+              { jalon: 'Fin maçonnerie', pct: '35%', montant: 'CHF 28\'000', detail: 'Gros œuvre terminé' },
+              { jalon: 'Fin installations', pct: '30%', montant: 'CHF 24\'000', detail: 'Électricité, plomberie, carrelage' },
+              { jalon: 'Réception', pct: '15%', montant: 'CHF 12\'000', detail: '30 jours après livraison' },
+            ].map(p => (
+              <div class="flex items-start gap-4 border-b border-gray-200 pb-4">
+                <span class="text-2xl font-black text-gray-200 w-12 flex-shrink-0">{p.pct}</span>
+                <div class="flex-1">
+                  <div class="flex justify-between items-baseline">
+                    <span class="font-bold text-sm">{p.jalon}</span>
+                    <span class="font-bold text-sm">{p.montant}</span>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-0.5">{p.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POUR QUI -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Pour qui</p>
+      <h2 class="text-3xl font-bold mb-12">Il suffit d'une de ces situations pour que cette formule vous corresponde.</h2>
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
+        {[
+          'Vous êtes propriétaire privé et voulez rénover votre bien sans vous en occuper.',
+          'Vous êtes petit investisseur et cherchez à déléguer la gestion complète de votre chantier.',
+          'Vous avez un budget défini et ne voulez pas de mauvaises surprises en cours de route.',
+          'Vous préférez avoir un seul contact responsable de tout, du premier appel à la livraison.',
+        ].map(item => (
+          <div class="flex gap-4 bg-white rounded-2xl p-6">
+            <span class="text-[#FF7500] font-black flex-shrink-0 mt-0.5">—</span>
+            <p class="text-gray-700 text-sm leading-relaxed">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTRES FORMULES -->
+  <section class="py-16 bg-white border-b border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-8">Nos autres formules</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/services/execution" class="group bg-gray-50 rounded-2xl p-8 flex items-center justify-between hover:shadow-md transition-shadow">
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-1">Formule 01</p>
+            <h3 class="text-xl font-bold group-hover:text-[#FF7500] transition-colors">Exécution seule</h3>
+            <p class="text-gray-500 text-sm mt-1">Maçonnerie & gros œuvre selon vos plans</p>
+          </div>
+          <span class="text-[#FF7500] font-black text-xl">→</span>
+        </a>
+        <a href="/services/direction-de-travaux" class="group bg-gray-50 rounded-2xl p-8 flex items-center justify-between hover:shadow-md transition-shadow">
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-1">Formule 02</p>
+            <h3 class="text-xl font-bold group-hover:text-[#FF7500] transition-colors">Direction de travaux</h3>
+            <p class="text-gray-500 text-sm mt-1">Coordination & suivi de chantier</p>
+          </div>
+          <span class="text-[#FF7500] font-black text-xl">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Prêt à déléguer votre projet ?</h2>
+      <p class="text-gray-400 mb-10">Première visite gratuite. Budget prévisionnel sous 2 à 3 semaines.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Parlons de votre projet</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

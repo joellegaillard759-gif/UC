@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    title: 'Exécution seule',
+    text: 'Vos plans sont prêts, on prend le relais. Maçonnerie, dalles, fondations, façades, canalisations — on exécute avec soin et dans les délais. Pour les clients qui ont déjà leur architecte ou leur projet bien défini.',
+    cta: 'Demander un devis',
+    href: '/contact',
+  },
+  {
+    title: 'Direction de travaux',
+    text: "Vous avez un projet mais pas le temps de tout gérer ? On coordonne vos artisans, on suit les délais, on gère les imprévus et on vous rend compte chaque semaine. Facturation au tarif horaire ou forfait selon projet.",
+    cta: 'En savoir plus',
+    href: '/services',
+  },
+  {
+    title: 'Clé en main',
+    text: "De la première visite à la livraison : un seul contrat, un seul interlocuteur. On s'occupe de tout — maçonnerie, électricité, plomberie, carrelage, peinture. Paiements échelonnés selon avancement, zéro mauvaise surprise.",
+    cta: 'Notre formule star',
+    href: '/services',
+  },
+];
+
+const domaines = [
+  { title: 'Votre maison', text: 'Rénovation, transformation, agrandissement — on intervient sur tous les corps de maçonnerie de votre maison.', img: '/images/maison.avif', alt: 'Maçonnerie maison district de Morges' },
+  { title: 'Vos extérieurs', text: 'Dalles, murets, aménagements extérieurs — on façonne vos espaces avec soin.', img: '/images/exterieurs.jpg', alt: 'Espaces extérieurs maçonnerie Morges' },
+  { title: 'Vos cheminées', text: 'Rénovation, chemisage, mise en conformité — on veille à la sécurité et à la durabilité de votre installation.', img: '/images/cheminee.jpg', alt: 'Rénovation cheminée Vaud' },
+  { title: 'Vos façades', text: 'Réparation de fissures, crépissage, ravalement — après notre passage, vos façades retrouvent leur éclat.', img: '/images/facades.jpg', alt: 'Rénovation façade district de Morges' },
+  { title: 'Vos canalisations', text: 'Mauvaises odeurs, humidité, moisissures ? On diagnostique et on assainit vos canalisations.', img: '/images/canalisations.jpg', alt: 'Canalisations assainissement Vaud' },
+  { title: 'Vos sols', text: 'Chapes, dalles, planchers chauffants — on intervient de la fondation à la finition.', img: '/images/sols.jpg', alt: 'Sols dalles maçonnerie Morges' },
+];
+
+const atouts = [
+  { label: '25 ans d\'expérience terrain' },
+  { label: 'Double compétence : technique + coordination' },
+  { label: 'Réseau d\'artisans de confiance vérifiés' },
+  { label: 'Prix transparent, devis détaillé' },
+  { label: 'District de Morges · Rolle · Aubonne · Cossonay' },
+];
+---
+
+<Layout
+  title="Urben Construction | Maçonnerie & Direction de Travaux – District de Morges"
+  description="Maçonnerie et direction de travaux dans le district de Morges. Exécution seule, coordination de chantier ou clé en main. Devis gratuit."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Urben Construction",
+    "description": "Maçonnerie et coordination de chantier dans le district de Morges. Exécution seule, direction de travaux, clé en main.",
+    "url": "https://urbenconstruction.ch",
+    "email": "info@urbenconstruction.ch",
+    "telephone": "+41218610155",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Route de Saint-Denis 24",
+      "postalCode": "1117",
+      "addressLocality": "Grancy",
+      "addressRegion": "Vaud",
+      "addressCountry": "CH"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "District de Morges, Vaud, Suisse"
+    },
+    "serviceType": ["Maçonnerie", "Direction de travaux", "Coordination de chantier", "Rénovation façades", "Canalisations", "Sols"],
+    "priceRange": "CHF",
+    "image": "https://urbenconstruction.ch/images/hero.jpg",
+  })} />
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="relative h-screen min-h-[600px] flex items-end">
+    <div class="absolute inset-0">
+      <img
+        src="/images/hero.jpg"
+        alt="Chantier Urben Construction district de Morges"
+        class="w-full h-full object-cover"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 pb-16 w-full">
+      <h1 class="text-white leading-none">
+        <span class="block font-black" style="font-size: clamp(2.8rem, 8vw, 7.5rem); letter-spacing: -0.01em;">URBEN CONSTRUCTION</span>
+        <div class="flex items-center gap-4 mt-5">
+          <div class="w-10 h-0.5 bg-[#FF7500] flex-shrink-0"></div>
+          <span class="text-base md:text-lg font-medium tracking-[0.18em] uppercase text-white/75">
+            Maçonnerie · Coordination de chantier · District de Morges
+          </span>
+        </div>
+      </h1>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Nous contacter</span>
+        </a>
+        <a href="/services" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          Nos formules
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS SERVICES -->
+  <section class="pt-16 pb-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">Trois façons de travailler avec nous</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {services.map(s => (
+          <div class="service-card bg-[#ebebeb] rounded-2xl p-10 flex flex-col">
+            <h3 class="text-xl font-bold mb-5">{s.title}</h3>
+            <p class="text-gray-700 flex-1 mb-10 leading-relaxed">{s.text}</p>
+            <a href={s.href} class="btn-orange w-full text-center py-4 text-xs font-bold tracking-widest uppercase rounded-lg">
+              <span>{s.cta}</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERLOCUTEUR UNIQUE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <h2 class="max-w-4xl mb-6">
+        <span class="block text-base md:text-lg font-normal text-gray-400 mb-3">Que ce soit pour un service précis ou un projet complet,</span>
+        <span class="block text-2xl md:text-3xl font-bold text-gray-900">nous sommes votre interlocuteur unique.</span>
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-14">
+        <div class="md:col-span-3 mb-2">
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400">Nos domaines d'intervention</p>
+        </div>
+        {domaines.map(d => (
+          <div class="flex flex-col">
+            <div class="aspect-[4/5] overflow-hidden mb-4">
+              <img
+                src={d.img}
+                alt={d.alt}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-2">{d.title}</h3>
+            <p class="text-gray-500 text-sm">{d.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex justify-center mt-16">
+        <div class="btn-corner-wrap">
+          <a href="/services" class="btn-corner px-16 py-4 text-sm font-bold tracking-widest uppercase">
+            <span>Découvrir tous nos services</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANDE RÉASSURANCE -->
+  <section class="border-y border-gray-100 bg-gray-50 py-8">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
+        {atouts.map(a => (
+          <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#FF7500] flex-shrink-0"></span>
+            {a.label}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

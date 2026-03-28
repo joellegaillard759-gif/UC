@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="Exécution seule — Maçonnerie & gros œuvre | Urben Construction"
+  description="Maçonnerie, dalles, fondations, façades, canalisations, cheminées : Urben Construction exécute selon vos plans dans le district de Morges. Devis gratuit sous 1 semaine."
+>
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="bg-gray-900 text-white pt-48 pb-20">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Formule 01 — Exécution seule</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Vos plans sont prêts.<br />On construit.
+      </h1>
+      <p class="text-gray-400 mt-6 text-lg max-w-xl">
+        Maçonnerie et gros œuvre, exécutés avec soin, dans les délais. Depuis 25 ans.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander un devis</span>
+        </a>
+        <a href="/services" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          Voir toutes nos formules
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QU'ON RÉALISE -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Ce qu'on réalise</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8">Maçonnerie et gros œuvre,<br />tous corps confondus.</h2>
+          <p class="text-gray-600 leading-relaxed mb-10">
+            Vous avez votre architecte, vos plans, votre permis. Vous avez besoin d'une équipe technique fiable pour réaliser les travaux selon les spécifications définies.
+            C'est notre cœur de métier depuis 25 ans.
+          </p>
+          <div class="grid grid-cols-2 gap-3">
+            {[
+              'Dalles et fondations',
+              'Murs porteurs',
+              'Maçonnerie générale',
+              'Rénovation de façades',
+              'Crépissage et ravalement',
+              'Réfection de cheminées',
+              'Canalisations',
+              'Chapes et sols',
+              'Démolitions',
+              'Gros œuvre',
+            ].map(item => (
+              <div class="flex items-center gap-2 text-sm text-gray-700">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#FF7500] flex-shrink-0"></span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden bg-gray-100">
+          <img src="/images/facades.jpg" alt="Exécution maçonnerie district de Morges" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POUR QUI -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Pour qui</p>
+      <h2 class="text-3xl font-bold mb-12 max-w-xl">Cette formule s'adresse à vous si...</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: 'Vous avez un architecte',
+            text: 'Les plans et le cahier des charges sont définis. Vous cherchez une entreprise de maçonnerie sérieuse pour exécuter selon les spécifications.',
+          },
+          {
+            title: 'Vous avez un projet défini',
+            text: 'Promoteur, constructeur ou particulier avec permis de construire — vous savez ce que vous voulez et vous avez besoin d\'une exécution impeccable.',
+          },
+          {
+            title: 'Vous gérez la coordination',
+            text: 'Vous coordonnez vous-même les différents corps de métier. Vous avez besoin d\'un maçon fiable qui respecte les délais et s\'adapte aux autres intervenants.',
+          },
+        ].map(c => (
+          <div class="bg-white p-8 rounded-2xl">
+            <div class="w-10 h-0.5 bg-[#FF7500] mb-6"></div>
+            <h3 class="text-lg font-bold mb-3">{c.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT ÇA SE PASSE -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Notre processus</p>
+      <h2 class="text-3xl font-bold mb-12">Du devis à la livraison.</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        {[
+          { n: '01', title: 'Visite & devis', text: 'On vient sur place analyser les travaux. Devis détaillé remis sous 1 semaine, gratuit et sans engagement.' },
+          { n: '02', title: 'Validation', text: 'Vous validez le devis et le planning. On confirme les dates de démarrage et les jalons.' },
+          { n: '03', title: 'Exécution', text: 'On intervient selon le cahier des charges. Travail soigné, respect des délais, coordination avec vos autres intervenants.' },
+          { n: '04', title: 'Réception', text: 'Réception des travaux avec vous. Levée des réserves et garanties selon les normes SIA.' },
+        ].map(e => (
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <p class="text-4xl font-black text-gray-200 mb-4">{e.n}</p>
+            <h3 class="font-bold mb-3">{e.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{e.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTRES FORMULES -->
+  <section class="py-16 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-8">Nos autres formules</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/services/direction-de-travaux" class="group bg-white rounded-2xl p-8 flex items-center justify-between hover:shadow-md transition-shadow">
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-1">Formule 02</p>
+            <h3 class="text-xl font-bold group-hover:text-[#FF7500] transition-colors">Direction de travaux</h3>
+            <p class="text-gray-500 text-sm mt-1">Coordination & suivi de chantier</p>
+          </div>
+          <span class="text-[#FF7500] font-black text-xl">→</span>
+        </a>
+        <a href="/services/cle-en-main" class="group bg-white rounded-2xl p-8 flex items-center justify-between hover:shadow-md transition-shadow">
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-1">Formule 03 — Notre formule star</p>
+            <h3 class="text-xl font-bold group-hover:text-[#FF7500] transition-colors">Accompagnement global</h3>
+            <p class="text-gray-500 text-sm mt-1">Clé en main, de A à Z</p>
+          </div>
+          <span class="text-[#FF7500] font-black text-xl">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Prêt à démarrer votre chantier ?</h2>
+      <p class="text-gray-400 mb-10">Devis gratuit sous 1 semaine. Première visite sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Parlons de votre projet</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

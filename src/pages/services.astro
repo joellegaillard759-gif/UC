@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const formules = [
+  {
+    num: '01',
+    title: 'Exécution seule',
+    label: 'Maçonnerie & gros œuvre',
+    text: 'Vos plans sont prêts, votre architecte a défini le projet. Vous avez besoin de quelqu\'un qui construit bien et dans les délais. On prend le relais.',
+    profil: 'Pour les clients avec architecte ou projet bien défini.',
+    href: '/services/execution',
+    cta: 'En savoir plus',
+  },
+  {
+    num: '02',
+    title: 'Direction de travaux',
+    label: 'Coordination & suivi de chantier',
+    text: 'Vous avez un projet mais pas le temps de gérer dix artisans. On coordonne, on suit les délais, on gère les imprévus. Vous avez un seul interlocuteur.',
+    profil: 'Pour les projets de rénovation sans architecte.',
+    href: '/services/direction-de-travaux',
+    cta: 'Découvrir cette formule',
+  },
+  {
+    num: '03',
+    title: 'Accompagnement global',
+    label: 'Clé en main — notre formule star',
+    text: 'De la première visite à la livraison : un seul contrat, un seul interlocuteur. On s\'occupe de tout — maçonnerie, coordination, artisans, suivi, garanties.',
+    profil: 'Pour déléguer complètement la gestion de votre rénovation.',
+    href: '/services/cle-en-main',
+    cta: 'Notre formule star',
+    star: true,
+  },
+];
+---
+
+<Layout
+  title="Nos services — Maçonnerie, Direction de travaux, Clé en main | Urben Construction"
+  description="Trois formules adaptées à votre projet : exécution seule, direction de travaux ou accompagnement global clé en main. District de Morges, Vaud."
+>
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="bg-gray-900 text-white pt-48 pb-20">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Nos services</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Trois façons de<br />travailler avec nous.
+      </h1>
+      <p class="text-gray-400 mt-6 text-lg max-w-xl">
+        Selon votre projet et votre niveau d'implication souhaité, on a la formule qui correspond.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3 FORMULES -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        {formules.map(f => (
+          <div class={`service-card flex flex-col rounded-2xl p-10 ${f.star ? 'bg-gray-900 text-white' : 'bg-[#ebebeb]'}`}>
+            <div class="flex items-start justify-between mb-6">
+              <span class={`text-4xl font-black ${f.star ? 'text-white/20' : 'text-gray-300'}`}>{f.num}</span>
+              {f.star && (
+                <span class="bg-[#FF7500] text-white text-xs font-bold px-2 py-1 uppercase tracking-wide rounded-sm">Notre formule star</span>
+              )}
+            </div>
+            <p class={`text-xs font-semibold tracking-widest uppercase mb-2 ${f.star ? 'text-[#FF7500]' : 'text-gray-400'}`}>{f.label}</p>
+            <h2 class={`text-2xl font-bold mb-4 ${f.star ? 'text-white' : 'text-gray-900'}`}>{f.title}</h2>
+            <p class={`text-sm leading-relaxed flex-1 mb-6 ${f.star ? 'text-gray-300' : 'text-gray-600'}`}>{f.text}</p>
+            <p class={`text-xs mb-8 ${f.star ? 'text-gray-400' : 'text-gray-400'}`}>{f.profil}</p>
+            <a href={f.href} class={`w-full text-center py-4 text-xs font-bold tracking-widest uppercase rounded-lg transition-colors ${f.star ? 'btn-orange' : 'bg-white text-gray-900 hover:bg-gray-100'}`}>
+              <span>{f.cta}</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEL PROFIL -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 max-w-xl">Vous ne savez pas encore quelle formule choisir ?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            q: 'Vous avez déjà un architecte ou des plans ?',
+            r: 'Exécution seule',
+            href: '/services/execution',
+          },
+          {
+            q: 'Vous voulez un expert pour gérer les artisans à votre place ?',
+            r: 'Direction de travaux',
+            href: '/services/direction-de-travaux',
+          },
+          {
+            q: 'Vous voulez déléguer l\'intégralité du projet ?',
+            r: 'Accompagnement global',
+            href: '/services/cle-en-main',
+          },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-2xl flex flex-col">
+            <p class="text-gray-600 leading-relaxed flex-1 mb-6">{item.q}</p>
+            <a href={item.href} class="flex items-center gap-2 text-sm font-bold text-gray-900 hover:text-[#FF7500] transition-colors group">
+              <span class="text-[#FF7500]">→</span>
+              {item.r}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Votre projet, notre prochain chantier.</h2>
+      <p class="text-gray-400 mb-10">Devis gratuit. Première visite sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Parlons de votre projet</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

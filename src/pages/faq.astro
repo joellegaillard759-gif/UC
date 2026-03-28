@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const categories = [
+  {
+    id: 'architecte',
+    title: 'Architecte & coordination',
+    questions: [
+      {
+        q: 'Faut-il un architecte pour rénover un appartement dans le Canton de Vaud ?',
+        a: `Non, pas nécessairement. En Vaud, la plupart des rénovations intérieures — redistribution des pièces, réfection de salle de bains, cuisine, électricité, plomberie — ne nécessitent pas de permis de construire et donc pas d'architecte.\n\nUn architecte devient indispensable dès que le projet implique une modification de la structure porteuse, une extension, une surélévation ou un changement d'affectation. Pour les rénovations courantes, un directeur de travaux ou un accompagnement global répond aux besoins de coordination du projet — sans nécessiter de mission architecturale complète.\n\nSi votre projet nécessite un architecte, nous travaillons avec des partenaires de confiance dans la région. Nous pouvons vous orienter vers le bon interlocuteur selon la nature de votre projet.`,
+        link: { label: 'Notre formule Direction de travaux', href: '/services/direction-de-travaux' },
+        partner: { label: 'Vibe Architectes — notre partenaire', href: 'https://vibe-ar.ch' },
+      },
+      {
+        q: 'Quelle est la différence entre un architecte et un directeur de travaux ?',
+        a: `L'architecte conçoit, dessine et obtient les autorisations. Le directeur de travaux coordonne l'exécution : il sélectionne les artisans, établit le planning, suit les délais et gère les imprévus.\n\nPour les projets qui n'ont pas besoin de conception architecturale — rénovation d'un appartement, réaménagement intérieur, rafraîchissement d'un bien locatif — un directeur de travaux couvre l'essentiel des besoins à un coût plus adapté.`,
+        link: { label: 'Comparer nos formules', href: '/services' },
+      },
+      {
+        q: "Qui coordonne les artisans si je n'ai pas d'architecte ?",
+        a: `C'est la question que se posent la plupart des propriétaires au moment de lancer une rénovation. Sans architecte, la coordination incombe soit au propriétaire — plusieurs heures par semaine, un niveau de stress élevé — soit à un professionnel mandaté pour ça.\n\nUn directeur de travaux ou un entrepreneur général en accompagnement global sélectionne les entreprises, suit le chantier et vous tient informé à chaque étape. Vous gardez les décisions importantes, on prend en charge le reste.`,
+        link: { label: "Découvrir l'accompagnement global", href: '/services/cle-en-main' },
+      },
+      {
+        q: 'À partir de quand faut-il un permis de construire dans le Canton de Vaud ?',
+        a: `Dans le Canton de Vaud, le permis de construire est requis dès qu'un projet modifie l'aspect extérieur d'un bâtiment, sa structure porteuse, son volume ou son affectation. Les travaux intérieurs n'impactant pas la structure — peinture, carrelage, électricité, plomberie, cloisons non porteuses — sont généralement dispensés de permis.\n\nEn cas de doute, il est conseillé de consulter la commune avant de démarrer. Nous accompagnons nos clients dans ces démarches dans le cadre de nos formules de coordination.`,
+      },
+    ],
+  },
+  {
+    id: 'chantier',
+    title: 'Gérer son chantier',
+    questions: [
+      {
+        q: 'Comment éviter les mauvaises surprises avec un artisan en Suisse ?',
+        a: `Quelques règles de base : exiger un devis détaillé avant tout démarrage, ne jamais payer plus de 30 % en avance, vérifier que l'entreprise est inscrite au registre du commerce et assurée en responsabilité civile, et prévoir une retenue de garantie libérée 30 jours après réception.\n\nLa meilleure protection reste de passer par un intermédiaire qui sélectionne et surveille les artisans à votre place. C'est exactement le rôle d'un directeur de travaux.`,
+        link: { label: 'Comment on travaille', href: '/services/direction-de-travaux' },
+      },
+      {
+        q: 'Qui est responsable si un artisan fait mal son travail ?',
+        a: `En Suisse, la responsabilité de l'artisan est engagée selon les normes SIA et le Code des obligations. La garantie légale est de 5 ans pour les défauts cachés et 2 ans pour les défauts apparents après réception.\n\nSi vous avez mandaté un directeur de travaux ou un entrepreneur général, c'est lui qui endosse la responsabilité de l'ensemble du chantier vis-à-vis de vous — y compris pour les travaux sous-traités. C'est l'un des avantages clés d'un interlocuteur unique.`,
+      },
+      {
+        q: 'Pourquoi mon chantier a-t-il pris du retard ?',
+        a: `Les retards de chantier ont presque toujours la même origine : un planning initial trop optimiste, des artisans qui interviennent dans le mauvais ordre, des délais de livraison de matériaux mal anticipés, ou des travaux imprévus découverts en cours de démolition.\n\nLa solution passe par un planning détaillé établi avant le démarrage, avec des jalons contractuels clairs et une coordination quotidienne des intervenants. C'est ce qu'on fait systématiquement avant chaque chantier.`,
+      },
+    ],
+  },
+  {
+    id: 'budget',
+    title: 'Budget & devis',
+    questions: [
+      {
+        q: "Pourquoi les devis de rénovation varient-ils autant d'un artisan à l'autre ?",
+        a: `Les écarts s'expliquent par plusieurs facteurs : les charges sociales et le niveau de qualification de l'équipe, la qualité des matériaux prévus, le niveau de détail du devis — un devis vague cache souvent des coûts futurs — et parfois simplement la disponibilité de l'entreprise.\n\nUn devis très bas mérite d'être scruté ligne par ligne. Un devis sérieux détaille séparément les fournitures, la main-d'œuvre et les travaux préparatoires.`,
+      },
+      {
+        q: 'Combien coûte une rénovation complète dans le district de Morges ?',
+        a: `Les fourchettes varient fortement selon l'état du bien et le niveau de finition. À titre indicatif, une rénovation complète d'un appartement de 4.5 pièces dans le district de Morges se situe généralement entre CHF 60'000 et CHF 150'000 — démolition, maçonnerie, électricité, plomberie, carrelage et peinture inclus.\n\nPour une villa, les projets démarrent habituellement à CHF 80'000 et peuvent dépasser plusieurs centaines de milliers selon l'ampleur. Seule une visite sur place permet d'établir un budget réaliste.`,
+        link: { label: 'Demander une visite gratuite', href: '/contact' },
+      },
+    ],
+  },
+  {
+    id: 'local',
+    title: 'Maçonnerie dans le district de Morges',
+    questions: [
+      {
+        q: 'Quelle entreprise de maçonnerie dans le district de Morges ?',
+        a: `Urben Construction est une entreprise familiale de maçonnerie et gros œuvre implantée dans le district de Morges depuis plus de 25 ans. Fondée par deux frères maçons de métier, elle intervient sur l'ensemble du district — Morges, Aubonne, Rolle, Cossonay, Echallens et leurs environs — pour des travaux de maçonnerie, dalles, fondations, façades, canalisations et démolitions.\n\nCe qui nous différencie : on ne sous-traite pas notre cœur de métier. Les travaux de maçonnerie sont réalisés par notre propre équipe, avec le même soin qu'on soit sur un petit appartement ou un chantier d'envergure.`,
+        link: { label: 'Nos réalisations', href: '/realisations' },
+      },
+      {
+        q: 'Rénovation appartement à Morges : par où commencer ?',
+        a: `La première étape est de définir clairement le périmètre des travaux et un budget prévisionnel. Ensuite : vérifier si le projet nécessite un permis, identifier les corps de métier nécessaires, et décider si vous gérez la coordination vous-même ou si vous la déléguez.\n\nUne visite gratuite avec un professionnel permet d'obtenir une estimation réaliste et d'éviter les mauvaises surprises dès le départ. C'est ce qu'on propose systématiquement avant tout engagement.`,
+        link: { label: 'Prendre rendez-vous', href: '/contact' },
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="FAQ — Rénovation, maçonnerie et coordination de chantier | Urben Construction"
+  description="Faut-il un architecte pour rénover en Vaud ? Comment éviter les mauvaises surprises ? Combien coûte une rénovation dans le district de Morges ? On répond."
+>
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="bg-gray-900 text-white pt-48 pb-20">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Ce que vous voulez<br />savoir avant de vous lancer.
+      </h1>
+      <p class="text-gray-400 mt-6 text-lg max-w-xl">
+        Rénovation, maçonnerie, coordination de chantier dans le district de Morges — les vraies questions, avec des réponses directes.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="max-w-3xl">
+
+        <!-- Recherche -->
+        <div class="relative mb-12">
+          <input
+            id="faq-search"
+            type="text"
+            placeholder="Rechercher — ex. architecte, permis, budget…"
+            class="w-full border border-gray-200 px-5 py-4 pr-12 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-gray-400 rounded-sm"
+          />
+          <span class="absolute right-5 top-1/2 -translate-y-1/2 text-gray-300 text-lg">›</span>
+        </div>
+
+        <!-- Catégories accordéon -->
+        <div id="faq-list">
+          {categories.map((cat, ci) => (
+            <details class="faq-category group border-t border-gray-200" open={ci === 0}>
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none select-none">
+                <span class="text-xs font-bold tracking-widest uppercase text-gray-900">{cat.title}</span>
+                <span class="faq-cat-icon text-[#FF7500] font-bold text-xl leading-none w-5 text-center transition-transform">+</span>
+              </summary>
+              <div class="pb-4">
+                {cat.questions.map(item => (
+                  <details class="faq-item group/item border-t border-gray-100" data-q={item.q.toLowerCase()}>
+                    <summary class="flex items-center justify-between py-4 cursor-pointer list-none select-none gap-4">
+                      <span class="faq-item-q text-sm text-gray-700 group-open/item:font-semibold group-open/item:text-gray-900 transition-colors leading-snug">{item.q}</span>
+                      <span class="faq-item-icon text-gray-300 text-xs flex-shrink-0 transition-transform">▶</span>
+                    </summary>
+                    <div class="pb-6 pl-0 pr-4">
+                      {item.a.split('\n\n').map(para => (
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3">{para}</p>
+                      ))}
+                      <div class="flex flex-wrap gap-6 mt-3">
+                        {item.link && (
+                          <a href={item.link.href} class="inline-flex items-center gap-2 text-xs font-bold tracking-wide uppercase text-[#FF7500] hover:gap-3 transition-all">
+                            <span>{item.link.label}</span>
+                            <span>→</span>
+                          </a>
+                        )}
+                        {item.partner && (
+                          <a href={item.partner.href} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-gray-600 transition-colors">
+                            <span>{item.partner.label}</span>
+                            <span>↗</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <p id="faq-empty" class="hidden text-sm text-gray-400 py-8">Aucun résultat. <a href="/contact" class="text-[#FF7500] font-semibold">Posez-nous votre question directement →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Icônes accordéon catégorie
+    document.querySelectorAll('.faq-category').forEach(cat => {
+      cat.addEventListener('toggle', () => {
+        const icon = cat.querySelector('.faq-cat-icon');
+        if (icon) icon.textContent = (cat as HTMLDetailsElement).open ? '−' : '+';
+      });
+    });
+
+    // Icônes accordéon question
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('toggle', () => {
+        const icon = item.querySelector('.faq-item-icon');
+        if (icon) icon.textContent = (item as HTMLDetailsElement).open ? '▼' : '▶';
+      });
+    });
+
+    // Recherche
+    const searchInput = document.getElementById('faq-search') as HTMLInputElement;
+    const faqEmpty = document.getElementById('faq-empty');
+
+    searchInput?.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      document.querySelectorAll('.faq-category').forEach(cat => {
+        let catVisible = 0;
+        cat.querySelectorAll('.faq-item').forEach(item => {
+          const q = (item as HTMLElement).dataset.q || '';
+          const match = !query || q.includes(query);
+          (item as HTMLElement).style.display = match ? '' : 'none';
+          if (match) catVisible++;
+        });
+        (cat as HTMLElement).style.display = catVisible > 0 ? '' : 'none';
+        if (catVisible > 0) {
+          visibleCount++;
+          if (query) (cat as HTMLDetailsElement).open = true;
+        }
+      });
+
+      if (faqEmpty) faqEmpty.classList.toggle('hidden', visibleCount > 0);
+    });
+  </script>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Votre question n'est pas là ?</h2>
+      <p class="text-gray-400 mb-10">On répond à toutes les questions en moins de 24h. Sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Posez-nous votre question</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

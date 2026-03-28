@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const projets = [
+  {
+    title: 'Rénovation de façade',
+    lieu: 'Cottens',
+    type: 'Exécution seule',
+    img: '/images/facades.jpg',
+    alt: 'Rénovation façade Cottens',
+  },
+  {
+    title: 'Réfection de cheminée',
+    lieu: 'Grancy',
+    type: 'Exécution seule',
+    img: '/images/cheminee.jpg',
+    alt: 'Réfection cheminée Grancy',
+  },
+  {
+    title: 'Aménagement extérieur',
+    lieu: 'Cossonay',
+    type: 'Exécution seule',
+    img: '/images/exterieurs.jpg',
+    alt: 'Aménagement extérieur Cossonay',
+  },
+  {
+    title: 'Pose de plancher chauffant',
+    lieu: 'Rolle',
+    type: 'Exécution seule',
+    img: '/images/sols.jpg',
+    alt: 'Plancher chauffant Rolle',
+  },
+  {
+    title: 'Assainissement canalisations',
+    lieu: 'District de Morges',
+    type: 'Exécution seule',
+    img: '/images/canalisations.jpg',
+    alt: 'Assainissement canalisations district de Morges',
+  },
+  {
+    title: 'Chantier maçonnerie',
+    lieu: 'Lussery-Villars',
+    type: 'Exécution seule',
+    img: '/images/realisations/lussery-villars.jpg',
+    alt: 'Chantier maçonnerie Lussery-Villars',
+  },
+  {
+    title: 'Construction d\'une cave',
+    lieu: 'Perroy',
+    type: 'Direction de travaux',
+    img: '/images/realisations/perroy.jpg',
+    alt: 'Direction de travaux Perroy',
+  },
+  {
+    title: 'Chantier maçonnerie',
+    lieu: 'Eclépens',
+    type: 'Exécution seule',
+    img: '/images/realisations/eclepens.jpg',
+    alt: 'Chantier maçonnerie Eclépens',
+  },
+  {
+    title: 'Chantier maçonnerie',
+    lieu: 'Saint-Livres',
+    type: 'Exécution seule',
+    img: '/images/realisations/saint-livres.jpg',
+    alt: 'Chantier maçonnerie Saint-Livres',
+  },
+  {
+    title: 'Pose d\'un mur en pierre taillée',
+    lieu: 'La Sarraz',
+    type: 'Exécution seule',
+    img: '/images/realisations/la-sarraz-1.jpg',
+    alt: 'Pose mur en pierre taillée La Sarraz',
+  },
+  {
+    title: 'Chantier maçonnerie',
+    lieu: 'La Sarraz',
+    type: 'Exécution seule',
+    img: '/images/realisations/la-sarraz-2.jpg',
+    alt: 'Chantier maçonnerie La Sarraz',
+  },
+];
+---
+
+<Layout
+  title="Nos réalisations — Maçonnerie & Coordination | Urben Construction"
+  description="Découvrez nos réalisations : rénovations, maçonnerie, direction de travaux et projets clé en main dans le district de Morges, Rolle, Aubonne, Cossonay."
+>
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="bg-gray-900 text-white pt-48 pb-20">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Nos réalisations</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Des chantiers concrets,<br />dans votre région.
+      </h1>
+    </div>
+  </section>
+
+  <!-- GRILLE PROJETS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-x-8 gap-y-10">
+
+        {projets.map(p => (
+          <div class="flex flex-col group">
+            <div class="aspect-[4/3] overflow-hidden mb-4 bg-gray-100">
+              <img
+                src={p.img}
+                alt={p.alt}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-semibold tracking-widest uppercase text-[#FF7500]">{p.type}</span>
+              <span class="text-gray-300">·</span>
+              <span class="text-xs text-gray-400">{p.lieu}</span>
+            </div>
+            <h2 class="text-lg font-bold">{p.title}</h2>
+          </div>
+        ))}
+
+        <!-- AVANT / APRÈS GRANCY -->
+        <div class="md:col-span-3 flex flex-col group">
+          <div class="grid grid-cols-2 gap-2 mb-4 bg-gray-100 overflow-hidden">
+            <div class="relative aspect-square overflow-hidden">
+              <img
+                src="/images/realisations/grancy-avant.jpg"
+                alt="Avant rénovation Grancy"
+                class="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <span class="absolute top-4 left-4 bg-gray-900/80 text-white text-xs font-bold tracking-widest uppercase px-3 py-1">Avant</span>
+            </div>
+            <div class="relative aspect-square overflow-hidden">
+              <img
+                src="/images/maison.avif"
+                alt="Après rénovation Grancy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <span class="absolute top-4 left-4 bg-[#FF7500] text-white text-xs font-bold tracking-widest uppercase px-3 py-1">Après</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-semibold tracking-widest uppercase text-[#FF7500]">Clé en main</span>
+            <span class="text-gray-300">·</span>
+            <span class="text-xs text-gray-400">Grancy</span>
+          </div>
+          <h2 class="text-lg font-bold">Rénovation complète — Avant / Après</h2>
+        </div>
+
+        <!-- AVANT / APRÈS -->
+        <div class="md:col-span-3 flex flex-col group">
+          <div class="grid grid-cols-2 gap-2 mb-4 bg-gray-100 overflow-hidden">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/realisations/avant.jpg"
+                alt="Avant travaux"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <span class="absolute top-4 left-4 bg-gray-900/80 text-white text-xs font-bold tracking-widest uppercase px-3 py-1">Avant</span>
+            </div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/realisations/apres.jpg"
+                alt="Après travaux"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <span class="absolute top-4 left-4 bg-[#FF7500] text-white text-xs font-bold tracking-widest uppercase px-3 py-1">Après</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-semibold tracking-widest uppercase text-[#FF7500]">Clé en main</span>
+            <span class="text-gray-300">·</span>
+            <span class="text-xs text-gray-400">Lussery-Villars</span>
+          </div>
+          <h2 class="text-lg font-bold">Rénovation complète — Avant / Après</h2>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Votre projet, notre prochain chantier.</h2>
+      <p class="text-gray-400 mb-10">Première visite sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Demander un devis</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

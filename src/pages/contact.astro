@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Contact & Devis gratuit — Urben Construction | District de Morges"
+  description="Contactez Urben Construction pour un devis gratuit sous 48h. Maçonnerie et coordination de chantier dans le district de Morges. +41 21 861 01 55"
+>
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="bg-gray-900 text-white pt-48 pb-20">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Contact</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Parlons de<br />votre projet.
+      </h1>
+      <p class="text-gray-400 mt-4 text-lg">Devis gratuit. Première visite sans engagement.</p>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE + INFOS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-16">
+
+        <!-- FORMULAIRE -->
+        <div class="md:col-span-2">
+          <form
+            action="https://formspree.io/f/REMPLACER_PAR_VOTRE_ID"
+            method="POST"
+            class="space-y-6"
+          >
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="nom" class="block text-sm font-semibold mb-2">Nom *</label>
+                <input
+                  type="text"
+                  id="nom"
+                  name="nom"
+                  required
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-900 transition-colors"
+                  placeholder="Votre nom"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold mb-2">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-900 transition-colors"
+                  placeholder="votre@email.ch"
+                />
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="telephone" class="block text-sm font-semibold mb-2">Téléphone</label>
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="telephone"
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-900 transition-colors"
+                  placeholder="+41 79 000 00 00"
+                />
+              </div>
+              <div>
+                <label for="commune" class="block text-sm font-semibold mb-2">Commune</label>
+                <input
+                  type="text"
+                  id="commune"
+                  name="commune"
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-900 transition-colors"
+                  placeholder="Morges"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="service" class="block text-sm font-semibold mb-2">Type de service souhaité</label>
+              <select
+                id="service"
+                name="service"
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-900 transition-colors bg-white"
+              >
+                <option value="">— Choisir une formule</option>
+                <option value="execution">Exécution seule (j'ai déjà mes plans)</option>
+                <option value="direction">Direction de travaux</option>
+                <option value="cle-en-main">Accompagnement global — Clé en main</option>
+                <option value="autre">Je ne sais pas encore</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-semibold mb-2">Décrivez votre projet *</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-900 transition-colors resize-none"
+                placeholder="Nature des travaux, localisation, budget approximatif, délai souhaité…"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn-orange w-full py-4 text-sm font-bold tracking-widest uppercase rounded-lg"
+            >
+              <span>Envoyer ma demande</span>
+            </button>
+            <p class="text-xs text-gray-400 text-center">Nous vous répondons sous 48h.</p>
+          </form>
+        </div>
+
+        <!-- INFOS CONTACT -->
+        <div class="space-y-8">
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">Téléphone</p>
+            <a href="tel:+41218610155" class="text-lg font-bold hover:text-[#FF7500] transition-colors">+41 21 861 01 55</a>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">Email</p>
+            <a href="mailto:info@urbenconstruction.ch" class="font-bold hover:text-[#FF7500] transition-colors">info@urbenconstruction.ch</a>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">Adresse</p>
+            <p class="text-gray-700">Route de Saint-Denis 24<br />1117 Grancy</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">Zone d'intervention</p>
+            <p class="text-gray-700 text-sm leading-relaxed">District de Morges — Morges, Rolle, Aubonne, Cossonay, Grancy et environs.</p>
+          </div>
+          <div class="border-t border-gray-100 pt-8">
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">Nos formules</p>
+            <div class="space-y-2 text-sm">
+              <a href="/services#execution" class="flex items-center gap-2 text-gray-700 hover:text-[#FF7500] transition-colors">
+                <span class="text-[#FF7500]">—</span> Exécution seule
+              </a>
+              <a href="/services#direction" class="flex items-center gap-2 text-gray-700 hover:text-[#FF7500] transition-colors">
+                <span class="text-[#FF7500]">—</span> Direction de travaux
+              </a>
+              <a href="/services#cle-en-main" class="flex items-center gap-2 text-gray-700 hover:text-[#FF7500] transition-colors">
+                <span class="text-[#FF7500]">—</span> Clé en main
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

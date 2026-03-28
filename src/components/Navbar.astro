@@ -1,0 +1,121 @@
+---
+const serviceLinks = [
+  { label: 'Maçonnerie & gros œuvre', href: '/services/execution', desc: 'Exécution selon vos plans' },
+  { label: 'Direction de travaux', href: '/services/direction-de-travaux', desc: 'Coordination & suivi de chantier' },
+  { label: 'Accompagnement global', href: '/services/cle-en-main', desc: 'Clé en main, de A à Z' },
+];
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1440px] mx-auto px-6 flex items-center justify-between h-20">
+    <a href="/">
+      <img src="/images/logo.avif" alt="Urben Construction" class="h-14 w-auto" />
+    </a>
+
+    <!-- Desktop -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/" class="text-sm font-semibold tracking-wide uppercase nav-link transition-colors duration-200">Accueil</a>
+      <a href="/a-propos" class="text-sm font-semibold tracking-wide uppercase nav-link transition-colors duration-200">À propos</a>
+
+      <!-- Services dropdown -->
+      <div class="relative group">
+        <a href="/services" class="text-sm font-semibold tracking-wide uppercase nav-link transition-colors duration-200 flex items-center gap-1">
+          Services
+          <svg class="w-3 h-3 mt-0.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
+          <div class="bg-white shadow-xl border border-gray-100 rounded-sm w-64 py-2">
+            {serviceLinks.map(s => (
+              <a href={s.href} class="block px-5 py-3 hover:bg-gray-50 transition-colors group/item">
+                <span class="block text-sm font-semibold text-gray-900 group-hover/item:text-[#FF7500] transition-colors">{s.label}</span>
+                <span class="block text-xs text-gray-400 mt-0.5">{s.desc}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <a href="/realisations" class="text-sm font-semibold tracking-wide uppercase nav-link transition-colors duration-200">Nos réalisations</a>
+      <a href="/faq" class="text-sm font-semibold tracking-wide uppercase nav-link transition-colors duration-200">FAQ</a>
+      <a href="/contact" class="text-sm font-semibold tracking-wide uppercase nav-link transition-colors duration-200">Contact</a>
+
+      <a id="navbar-cta" href="/contact" class="btn-orange btn-orange-on-dark px-5 py-2.5 text-sm font-bold tracking-wide uppercase rounded-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <span>Nous contacter</span>
+      </a>
+    </div>
+
+    <!-- Mobile burger -->
+    <button id="burger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+      <span class="burger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="burger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="burger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+    <a href="/" class="text-sm font-semibold tracking-wide uppercase text-gray-900 hover:text-[#FF7500] transition-colors">Accueil</a>
+    <a href="/a-propos" class="text-sm font-semibold tracking-wide uppercase text-gray-900 hover:text-[#FF7500] transition-colors">À propos</a>
+    <div>
+      <a href="/services" class="text-sm font-semibold tracking-wide uppercase text-gray-900 hover:text-[#FF7500] transition-colors block mb-3">Services</a>
+      <div class="pl-4 flex flex-col gap-3 border-l-2 border-[#FF7500]">
+        {serviceLinks.map(s => (
+          <a href={s.href} class="text-sm text-gray-600 hover:text-[#FF7500] transition-colors">{s.label}</a>
+        ))}
+      </div>
+    </div>
+    <a href="/realisations" class="text-sm font-semibold tracking-wide uppercase text-gray-900 hover:text-[#FF7500] transition-colors">Nos réalisations</a>
+    <a href="/faq" class="text-sm font-semibold tracking-wide uppercase text-gray-900 hover:text-[#FF7500] transition-colors">FAQ</a>
+    <a href="/contact" class="text-sm font-semibold tracking-wide uppercase text-gray-900 hover:text-[#FF7500] transition-colors">Contact</a>
+    <a href="/contact" class="btn-orange text-center px-5 py-3 text-sm font-bold tracking-wide uppercase rounded-sm">
+      <span>Nous contacter</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const burgerLines = document.querySelectorAll('.burger-line');
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navbarCta = document.getElementById('navbar-cta');
+
+  const isHome = window.location.pathname === '/';
+
+  function updateNavbar() {
+    const scrolled = window.scrollY > 60;
+    const heroPassed = window.scrollY > window.innerHeight - 100;
+
+    if (scrolled) {
+      navbar!.classList.add('bg-white', 'shadow-sm');
+      navbar!.classList.remove('bg-transparent');
+      navLinks.forEach(l => l.classList.add('text-gray-900', 'hover:text-orange-500'));
+      navLinks.forEach(l => l.classList.remove('text-white', 'hover:text-orange-300'));
+      burgerLines.forEach(l => l.classList.add('bg-gray-900'));
+      burgerLines.forEach(l => l.classList.remove('bg-white'));
+    } else {
+      navbar!.classList.remove('bg-white', 'shadow-sm');
+      navbar!.classList.add('bg-transparent');
+      navLinks.forEach(l => l.classList.remove('text-gray-900', 'hover:text-orange-500'));
+      navLinks.forEach(l => l.classList.add('text-white', 'hover:text-orange-300'));
+      burgerLines.forEach(l => l.classList.remove('bg-gray-900'));
+      burgerLines.forEach(l => l.classList.add('bg-white'));
+    }
+
+    if (!isHome || heroPassed) {
+      navbarCta!.classList.remove('opacity-0', 'pointer-events-none');
+    } else {
+      navbarCta!.classList.add('opacity-0', 'pointer-events-none');
+    }
+  }
+
+  updateNavbar();
+  window.addEventListener('scroll', updateNavbar);
+
+  burger!.addEventListener('click', () => {
+    mobileMenu!.classList.toggle('hidden');
+  });
+</script>
