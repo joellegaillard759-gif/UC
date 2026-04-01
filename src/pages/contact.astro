@@ -28,11 +28,14 @@ import Footer from '../components/Footer.astro';
 
         <!-- FORMULAIRE -->
         <div class="md:col-span-2">
-          <form
-            action="https://formspree.io/f/REMPLACER_PAR_VOTRE_ID"
-            method="POST"
-            class="space-y-6"
-          >
+          <form id="contact-form" method="POST" class="space-y-6">
+
+            <!-- Honeypot : invisible pour les humains, rempli par les bots -->
+            <div style="display:none" aria-hidden="true">
+              <label for="website">Ne pas remplir</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
             <div class="grid md:grid-cols-2 gap-6">
               <div>
                 <label for="nom" class="block text-sm font-semibold mb-2">Nom *</label>
@@ -108,14 +111,57 @@ import Footer from '../components/Footer.astro';
               ></textarea>
             </div>
 
+            <!-- Feedback -->
+            <div id="form-success" class="hidden rounded-lg bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-800">
+              Message envoyé — nous vous répondons sous 48h.
+            </div>
+            <div id="form-error" class="hidden rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-800"></div>
+
             <button
               type="submit"
+              id="submit-btn"
               class="btn-orange w-full py-4 text-sm font-bold tracking-widest uppercase rounded-lg"
             >
-              <span>Envoyer ma demande</span>
+              <span id="submit-label">Envoyer ma demande</span>
             </button>
             <p class="text-xs text-gray-400 text-center">Nous vous répondons sous 48h.</p>
           </form>
+
+          <script>
+            const form = document.getElementById('contact-form');
+            const btn = document.getElementById('submit-btn');
+            const label = document.getElementById('submit-label');
+            const successEl = document.getElementById('form-success');
+            const errorEl = document.getElementById('form-error');
+
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              btn.disabled = true;
+              label.textContent = 'Envoi en cours…';
+              successEl.classList.add('hidden');
+              errorEl.classList.add('hidden');
+
+              const data = new FormData(form);
+
+              try {
+                const res = await fetch('/contact.php', { method: 'POST', body: data });
+                const json = await res.json();
+                if (json.success) {
+                  successEl.classList.remove('hidden');
+                  form.reset();
+                } else {
+                  errorEl.textContent = json.error || "Une erreur s'est produite.";
+                  errorEl.classList.remove('hidden');
+                }
+              } catch {
+                errorEl.textContent = "Impossible d'envoyer le message. Veuillez nous appeler directement.";
+                errorEl.classList.remove('hidden');
+              } finally {
+                btn.disabled = false;
+                label.textContent = 'Envoyer ma demande';
+              }
+            });
+          </script>
         </div>
 
         <!-- INFOS CONTACT -->

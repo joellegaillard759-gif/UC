@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const signaux = [
+  { titre: 'Fissures et lézardes', desc: 'Fissures horizontales, verticales ou en escalier sur votre enduit ou votre maçonnerie — elles laissent entrer l\'eau.' },
+  { titre: 'Humidité et taches', desc: 'Auréoles, moisissures ou peinture qui cloque : la façade n\'est plus étanche et l\'humidité pénètre dans les murs.' },
+  { titre: 'Efflorescence', desc: 'Dépôts blancs poudreuxsur la surface : signe que les sels minéraux migrent à travers un enduit dégradé.' },
+  { titre: 'Crépi qui s\'écaille', desc: 'Plaques d\'enduit qui se détachent ou tombent — la façade perd sa protection et se dégrade rapidement.' },
+];
+
+const prestations = [
+  { titre: 'Diagnostic façade', desc: 'Visite sur place, identification des zones dégradées, rapport détaillé et devis chiffré.' },
+  { titre: 'Réparation de fissures', desc: 'Traitement des fissures actives et passives, injection de résine, ragréage et finition teintée.' },
+  { titre: 'Ravalement et crépissage', desc: 'Dépose de l\'ancien enduit, préparation du support, application d\'un crépi neuf hydraulique ou siloxane.' },
+  { titre: 'Nettoyage haute pression', desc: 'Élimination des mousses, lichens et salissures avant traitement — sans endommager la maçonnerie.' },
+  { titre: 'Traitement hydrofuge', desc: 'Application d\'un hydrofuge de surface après ravalement pour protéger durablement la façade contre les intempéries.' },
+  { titre: 'Rejointoiement', desc: 'Reprise des joints de maçonnerie dégradés entre les pierres ou les briques — étanchéité et esthétique restaurées.' },
+];
+
+const faq = [
+  {
+    q: 'Quand faut-il ravaler une façade ?',
+    a: 'En règle générale, une façade en crépi demande un entretien tous les 15 à 25 ans selon l\'exposition, le type d\'enduit et les conditions climatiques. Les signaux d\'alerte sont clairs : fissures visibles, crépi qui s\'écaille, taches d\'humidité sur les murs intérieurs ou extérieurs, ou simplement une dégradation esthétique marquée. Intervenir tôt coûte toujours moins cher qu\'attendre que l\'eau pénètre dans la structure.',
+  },
+  {
+    q: 'Faut-il un permis de construire pour ravaler une façade dans le Canton de Vaud ?',
+    a: 'Cela dépend du type de travaux. Un simple ravalement à l\'identique — même couleur, même texture — ne nécessite généralement pas de permis dans le Canton de Vaud. En revanche, un changement de couleur de façade ou une modification de l\'aspect extérieur du bâtiment peut nécessiter une autorisation communale. Nous vérifions systématiquement ce point pour vous avant de démarrer.',
+  },
+  {
+    q: 'Combien coûte un ravalement de façade dans le district de Morges ?',
+    a: 'Le coût dépend de la surface, de l\'état de l\'enduit existant, du type de crépi choisi et des éventuels travaux de réparation préalables. À titre indicatif, un ravalement complet se situe entre CHF 60 et CHF 120 par m² de façade, échafaudage compris. Pour une maison individuelle de taille standard, on se situe souvent entre CHF 15\'000 et CHF 35\'000. Seule une visite sur place permet d\'établir un devis précis.',
+  },
+  {
+    q: 'Quelle différence entre un crépi hydraulique et un crépi siloxane ?',
+    a: 'Le crépi hydraulique (à base de ciment) est plus économique et solide mécaniquement — il convient bien aux façades exposées aux chocs. Le crépi siloxane est hydrofuge par nature, plus souple et résistant aux intempéries suisses — il est recommandé pour les façades exposées nord ou les zones à forte pluviométrie. Nous vous conseillons le produit adapté à votre situation.',
+  },
+  {
+    q: 'Peut-on ravaler une façade en hiver ?',
+    a: 'Non. Les travaux de crépissage et de peinture de façade nécessitent une température positive et une absence de gel, généralement entre +5°C et +30°C, sans pluie prévue dans les 24 à 48 heures après application. En Suisse romande, la saison favorable s\'étend d\'avril à octobre. Nous planifions les chantiers en tenant compte de ces contraintes.',
+  },
+];
+---
+
+<Layout
+  title="Ravalement et réfection de façade — District de Morges | Urben Construction"
+  description="Fissures, crépi qui s'écaille, humidité ? Urben Construction répare et ravale les façades dans le district de Morges. Devis gratuit sous 48h."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Réfection et ravalement de façade",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urben Construction",
+      "url": "https://urbenconstruction.ch",
+      "telephone": "+41218610155",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grancy",
+        "addressRegion": "Vaud",
+        "addressCountry": "CH"
+      }
+    },
+    "areaServed": "District de Morges, Vaud, Suisse",
+    "description": "Ravalement de façade, réparation de fissures, crépissage, nettoyage et traitement hydrofuge dans le district de Morges."
+  })} />
+
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/facades.jpg" alt="Réfection de façade district de Morges" class="w-full h-full object-cover opacity-30" />
+    </div>
+    <div class="relative max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Ravalement et réfection<br />de façade.
+      </h1>
+      <p class="text-gray-300 mt-6 text-lg max-w-xl">
+        Fissures, crépi dégradé, humidité — on diagnostique, on répare et on protège durablement votre façade dans le district de Morges.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander un devis gratuit</span>
+        </a>
+        <a href="tel:+41218610155" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          +41 21 861 01 55
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNAUX D'ALERTE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Reconnaître les signes</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl">Votre façade vous parle.<br />Savez-vous l'écouter ?</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Une façade dégradée ne se contente pas d'être inesthétique — elle laisse entrer l'eau et accélère la détérioration de la structure. Voici les signaux qui ne mentent pas.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {signaux.map(s => (
+          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
+            <h3 class="text-base font-bold mb-2">{s.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS PRESTATIONS -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
+      <h2 class="text-3xl font-bold mb-14">Nos prestations façade</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {prestations.map(p => (
+          <div class="bg-white rounded-xl p-6">
+            <h3 class="text-base font-bold mb-2">{p.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO + TEXTE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/realisations/grancy-avant.jpg" alt="Rénovation façade Grancy" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
+          <h2 class="text-3xl font-bold mb-6">On ne repeint pas par-dessus les problèmes.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Avant d'appliquer quoi que ce soit, on diagnostique le support. Une fissure mal traitée réapparaîtra dans 2 ans. Une fissure bien traitée disparaît définitivement.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">On travaille avec nos propres maçons — pas de sous-traitance sur les travaux de réparation. Vous avez un interlocuteur du diagnostic à la livraison.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
+          <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>Prendre contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
+        <h2 class="text-3xl font-bold mb-12">Tout ce que vous voulez savoir sur la réfection de façade.</h2>
+        <div class="space-y-0">
+          {faq.map(item => (
+            <details class="group border-t border-gray-200">
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none select-none gap-4">
+                <span class="text-sm font-semibold text-gray-900 leading-snug">{item.q}</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 group-open:hidden">+</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 hidden group-open:block">−</span>
+              </summary>
+              <p class="pb-6 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Votre façade mérite un vrai diagnostic.</h2>
+      <p class="text-gray-400 mb-10">Visite gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Demander une visite gratuite</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

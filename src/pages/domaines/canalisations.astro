@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const signaux = [
+  { titre: 'Mauvaises odeurs persistantes', desc: 'Des odeurs d\'égout qui remontent malgré le nettoyage : signe d\'un problème d\'étanchéité ou d\'un siphon défaillant.' },
+  { titre: 'Humidité et moisissures', desc: 'Traces d\'humidité sur les murs ou le sol, moisissures récurrentes : une canalisation fuit souvent à proximité.' },
+  { titre: 'Évacuations lentes', desc: 'L\'eau s\'écoule lentement, des gargouillis apparaissent — indicateurs d\'un encrassement ou d\'un rétrécissement de la canalisation.' },
+  { titre: 'Refoulements', desc: 'Eau qui remonte dans les évacuations — situation qui indique un bouchon ou une obstruction grave dans le réseau.' },
+];
+
+const prestations = [
+  { titre: 'Inspection caméra', desc: 'Passage d\'une caméra dans les conduites pour identifier précisément l\'origine et l\'étendue du problème sans fouille inutile.' },
+  { titre: 'Débouchage haute pression', desc: 'Nettoyage par jet haute pression pour éliminer les dépôts de graisse, calcaire et racines dans les conduites.' },
+  { titre: 'Réfection de canalisations', desc: 'Remplacement des conduites dégradées, fissurées ou obsolètes en PVC ou en fonte, avec remise en état du sol.' },
+  { titre: 'Assainissement de réseau', desc: 'Reprise complète d\'un réseau d\'évacuation : eaux usées, eaux pluviales et eaux-vannes, en conformité avec les normes SIA.' },
+  { titre: 'Chemisage de tuyaux', desc: 'Rénovation sans fouille par introduction d\'un manchon synthétique dans la canalisation existante — moins invasif et plus rapide.' },
+  { titre: 'Pose de regards et tampon', desc: 'Installation ou remplacement de regards d\'accès, tampons de visite et séparateurs — pour faciliter l\'entretien futur.' },
+];
+
+const faq = [
+  {
+    q: 'Qui est responsable des canalisations dans un immeuble en Suisse ?',
+    a: 'En Suisse, les canalisations privées — celles situées à l\'intérieur du bâtiment et jusqu\'au raccordement au réseau communal — sont à la charge du propriétaire. Les canalisations publiques (réseau communal) relèvent de la commune. En cas de doute sur la limite de propriété, un inspection caméra permet de localiser précisément le problème et de déterminer qui doit intervenir.',
+  },
+  {
+    q: 'Combien coûte un assainissement de canalisations dans le district de Morges ?',
+    a: 'Le coût varie selon l\'ampleur des travaux, l\'accessibilité des conduites et la technique utilisée. Un débouchage simple se situe entre CHF 200 et CHF 500. Une réfection partielle de canalisation (remplacement d\'un tronçon) coûte généralement entre CHF 1\'500 et CHF 5\'000. Un assainissement complet du réseau d\'une maison individuelle peut aller de CHF 8\'000 à CHF 25\'000. Seul un diagnostic préalable permet un chiffrage précis.',
+  },
+  {
+    q: 'Peut-on rénover des canalisations sans casser les murs ou les dalles ?',
+    a: 'Oui, dans certains cas, grâce au chemisage — aussi appelé réhabilitation sans fouille. Un manchon synthétique imprégné de résine est inséré dans la canalisation existante, puis gonflé et durci sur place. Cette technique évite la démolition et les travaux de remise en état, mais n\'est pas applicable dans toutes les situations (coudes serrés, état trop dégradé). L\'inspection caméra préalable détermine si c\'est possible.',
+  },
+  {
+    q: 'Une mauvaise odeur d\'égout suffit-elle à justifier une intervention ?',
+    a: 'Oui, et il vaut mieux ne pas attendre. Les mauvaises odeurs persistantes signalent généralement un défaut d\'étanchéité ou un siphon défaillant. En plus d\'être désagréables, elles peuvent indiquer des émanations de gaz nocifs (H2S, méthane). Une inspection rapide permet de diagnostiquer la cause sans nécessairement engager de grands travaux.',
+  },
+  {
+    q: 'Faut-il un permis pour refaire les canalisations d\'une maison en Vaud ?',
+    a: 'Les travaux de remplacement de canalisations existantes à l\'identique ne nécessitent généralement pas de permis de construire en Vaud. En revanche, si les travaux impliquent une modification du raccordement au réseau communal ou une nouvelle installation de fosse, un avis à la commune et parfois une autorisation sont requis. Nous nous chargeons de ces démarches dans le cadre de nos chantiers.',
+  },
+];
+---
+
+<Layout
+  title="Assainissement et réfection de canalisations — District de Morges | Urben Construction"
+  description="Mauvaises odeurs, humidité, évacuations bouchées ? Urben Construction diagnostique et assainit vos canalisations dans le district de Morges. Devis gratuit."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Assainissement et réfection de canalisations",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urben Construction",
+      "url": "https://urbenconstruction.ch",
+      "telephone": "+41218610155",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grancy",
+        "addressRegion": "Vaud",
+        "addressCountry": "CH"
+      }
+    },
+    "areaServed": "District de Morges, Vaud, Suisse",
+    "description": "Diagnostic, débouchage, réfection et assainissement de canalisations dans le district de Morges."
+  })} />
+
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/canalisations.jpg" alt="Assainissement canalisations district de Morges" class="w-full h-full object-cover opacity-25" />
+    </div>
+    <div class="relative max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Assainissement et réfection<br />de canalisations.
+      </h1>
+      <p class="text-gray-300 mt-6 text-lg max-w-xl">
+        Mauvaises odeurs, humidité, évacuations lentes — on diagnostique la cause exacte et on intervient durablement, sans travaux inutiles.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander un devis gratuit</span>
+        </a>
+        <a href="tel:+41218610155" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          +41 21 861 01 55
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNAUX D'ALERTE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Reconnaître les signes</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl">Les problèmes de canalisation<br />ne se résolvent pas seuls.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Ignorer un signal d'alerte coûte toujours plus cher à terme — une fuite non traitée peut endommager la structure d'un bâtiment en quelques mois.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {signaux.map(s => (
+          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
+            <h3 class="text-base font-bold mb-2">{s.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
+      <h2 class="text-3xl font-bold mb-14">Nos prestations canalisations</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {prestations.map(p => (
+          <div class="bg-white rounded-xl p-6">
+            <h3 class="text-base font-bold mb-2">{p.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXTE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
+          <h2 class="text-3xl font-bold mb-6">D'abord diagnostiquer. Ensuite intervenir.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">On n'ouvre pas les murs au hasard. Avant toute intervention, on localise précisément le problème — par inspection caméra si nécessaire — pour n'intervenir qu'au bon endroit.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">On réalise les travaux de maçonnerie, de terrassement et de remise en état avec nos propres équipes. Pas de sous-traitance : vous avez un interlocuteur unique du diagnostic à la fin du chantier.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Intervention dans le district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
+          <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>Prendre contact</span>
+          </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/canalisations.jpg" alt="Travaux canalisations district de Morges" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur l'assainissement de canalisations.</h2>
+        <div class="space-y-0">
+          {faq.map(item => (
+            <details class="group border-t border-gray-200">
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none select-none gap-4">
+                <span class="text-sm font-semibold text-gray-900 leading-snug">{item.q}</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 group-open:hidden">+</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 hidden group-open:block">−</span>
+              </summary>
+              <p class="pb-6 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un problème de canalisation ?<br />On vient voir.</h2>
+      <p class="text-gray-400 mb-10">Visite diagnostic gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Demander une visite gratuite</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
