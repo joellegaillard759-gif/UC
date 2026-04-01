@@ -20,16 +20,16 @@ const formules = [
     text: 'Vous avez un projet mais pas le temps de gérer dix artisans. On coordonne, on suit les délais, on gère les imprévus. Vous avez un seul interlocuteur.',
     profil: 'Pour les projets de rénovation sans architecte.',
     href: '/services/direction-de-travaux',
-    cta: 'Découvrir cette formule',
+    cta: 'En savoir plus',
   },
   {
     num: '03',
     title: 'Accompagnement global',
-    label: 'Clé en main — notre formule star',
+    label: 'Clé en main — notre prestation phare',
     text: 'De la première visite à la livraison : un seul contrat, un seul interlocuteur. On s\'occupe de tout — maçonnerie, coordination, artisans, suivi, garanties.',
     profil: 'Pour déléguer complètement la gestion de votre rénovation.',
     href: '/services/cle-en-main',
-    cta: 'Notre formule star',
+    cta: 'Notre prestation phare',
     star: true,
   },
 ];
@@ -44,12 +44,12 @@ const formules = [
   <!-- HEADER -->
   <section class="bg-gray-900 text-white pt-48 pb-20">
     <div class="max-w-[1440px] mx-auto px-6">
-      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Nos services</p>
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Nos prestations</p>
       <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
-        Trois façons de<br />travailler avec nous.
+        Comment on travaille<br />avec vous.
       </h1>
       <p class="text-gray-400 mt-6 text-lg max-w-xl">
-        Selon votre projet et votre niveau d'implication souhaité, on a la formule qui correspond.
+        Selon votre projet et votre niveau d'implication souhaité, on a la prestation qui correspond.
       </p>
     </div>
   </section>
@@ -63,7 +63,7 @@ const formules = [
             <div class="flex items-start justify-between mb-6">
               <span class={`text-4xl font-black ${f.star ? 'text-white/20' : 'text-gray-300'}`}>{f.num}</span>
               {f.star && (
-                <span class="bg-[#FF7500] text-white text-xs font-bold px-2 py-1 uppercase tracking-wide rounded-sm">Notre formule star</span>
+                <span class="bg-[#FF7500] text-white text-xs font-bold px-2 py-1 uppercase tracking-wide rounded-sm">Notre prestation phare</span>
               )}
             </div>
             <p class={`text-xs font-semibold tracking-widest uppercase mb-2 ${f.star ? 'text-[#FF7500]' : 'text-gray-400'}`}>{f.label}</p>
@@ -82,7 +82,7 @@ const formules = [
   <!-- QUEL PROFIL -->
   <section class="py-20 bg-gray-50 border-y border-gray-100">
     <div class="max-w-[1440px] mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-12 max-w-xl">Vous ne savez pas encore quelle formule choisir ?</h2>
+      <h2 class="text-3xl font-bold mb-12 max-w-xl">Vous ne savez pas encore quelle prestation choisir ?</h2>
       <div class="grid md:grid-cols-3 gap-8">
         {[
           {
