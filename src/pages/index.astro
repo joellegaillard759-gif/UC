@@ -6,31 +6,32 @@ import Footer from '../components/Footer.astro';
 const services = [
   {
     title: 'Gros œuvre & travaux',
-    text: 'Vos plans sont prêts, on prend le relais. Maçonnerie, dalles, fondations, façades, canalisations — on exécute avec soin et dans les délais. Pour les clients qui ont déjà leur architecte ou leur projet bien défini.',
-    cta: 'Demander un devis',
-    href: '/contact',
+    text: 'Vos plans sont prêts, on prend le relais. Maçonnerie, béton, fondations, dalles — on exécute avec soin et dans les délais.',
+    cta: 'En savoir plus',
+    href: '/services/execution',
   },
   {
     title: 'Direction de travaux',
-    text: "Vous avez un projet mais pas le temps de tout gérer ? On coordonne vos artisans, on suit les délais, on gère les imprévus et on vous rend compte chaque semaine. Facturation au tarif horaire ou forfait selon projet.",
+    text: "Vous avez un projet mais pas le temps de gérer les artisans ? On coordonne, on suit les délais, on gère les imprévus. Un seul interlocuteur.",
     cta: 'En savoir plus',
-    href: '/services',
+    href: '/services/direction-de-travaux',
   },
   {
     title: 'Entreprise générale',
-    text: "De la première visite à la livraison : un seul contrat, un seul interlocuteur. On s'occupe de tout — maçonnerie, électricité, plomberie, carrelage, peinture. Paiements échelonnés selon avancement, zéro mauvaise surprise.",
-    cta: 'Notre prestation phare',
-    href: '/services',
+    text: "De la première visite à la livraison, on s'occupe de tout. Un seul contrat, zéro mauvaise surprise.",
+    cta: 'En savoir plus',
+    href: '/services/cle-en-main',
+    star: true,
   },
 ];
 
 const domaines = [
-  { title: 'Votre maison', text: 'Rénovation, transformation, agrandissement — on intervient sur tous les corps de maçonnerie de votre maison.', img: '/images/maison.avif', alt: 'Maçonnerie maison district de Morges' },
-  { title: 'Vos extérieurs', text: 'Dalles, murets, aménagements extérieurs — on façonne vos espaces avec soin.', img: '/images/exterieurs.jpg', alt: 'Espaces extérieurs maçonnerie Morges' },
-  { title: 'Vos cheminées', text: 'Rénovation, chemisage, mise en conformité — on veille à la sécurité et à la durabilité de votre installation.', img: '/images/cheminee.jpg', alt: 'Rénovation cheminée Vaud' },
-  { title: 'Vos façades', text: 'Réparation de fissures, crépissage, ravalement — après notre passage, vos façades retrouvent leur éclat.', img: '/images/facades.jpg', alt: 'Rénovation façade district de Morges' },
-  { title: 'Vos canalisations', text: 'Mauvaises odeurs, humidité, moisissures ? On diagnostique et on assainit vos canalisations.', img: '/images/canalisations.jpg', alt: 'Canalisations assainissement Vaud' },
-  { title: 'Vos sols', text: 'Chapes, dalles, planchers chauffants — on intervient de la fondation à la finition.', img: '/images/sols.jpg', alt: 'Sols dalles maçonnerie Morges' },
+  { title: 'Votre maison', text: 'Rénovation, transformation, agrandissement — on intervient sur tous les corps de maçonnerie de votre maison.', img: '/images/maison.avif', alt: 'Maçonnerie maison district de Morges', href: '/services/execution' },
+  { title: 'Vos extérieurs', text: 'Dalles, murets, aménagements extérieurs — on façonne vos espaces avec soin.', img: '/images/exterieurs.jpg', alt: 'Espaces extérieurs maçonnerie Morges', href: '/services/execution' },
+  { title: 'Vos cheminées', text: 'Rénovation, chemisage, mise en conformité — on veille à la sécurité et à la durabilité de votre installation.', img: '/images/cheminee.jpg', alt: 'Rénovation cheminée Vaud', href: '/services/execution' },
+  { title: 'Vos façades', text: 'Réparation de fissures, crépissage, ravalement — après notre passage, vos façades retrouvent leur éclat.', img: '/images/facades.jpg', alt: 'Rénovation façade district de Morges', href: '/domaines/facades' },
+  { title: 'Vos canalisations', text: 'Mauvaises odeurs, humidité, moisissures ? On diagnostique et on assainit vos canalisations.', img: '/images/canalisations.jpg', alt: 'Canalisations assainissement Vaud', href: '/domaines/canalisations' },
+  { title: 'Vos sols', text: 'Chapes, dalles, planchers chauffants — on intervient de la fondation à la finition.', img: '/images/sols.jpg', alt: 'Sols dalles maçonnerie Morges', href: '/domaines/sols' },
 ];
 
 const atouts = [
@@ -110,9 +111,12 @@ const atouts = [
       <h2 class="text-3xl font-bold text-center mb-16">Nos prestations</h2>
       <div class="grid md:grid-cols-3 gap-8">
         {services.map(s => (
-          <div class="service-card bg-[#ebebeb] rounded-2xl p-10 flex flex-col">
-            <h3 class="text-xl font-bold mb-5">{s.title}</h3>
-            <p class="text-gray-700 flex-1 mb-10 leading-relaxed">{s.text}</p>
+          <div class={`service-card rounded-2xl p-10 flex flex-col ${s.star ? 'bg-gray-900 text-white' : 'bg-[#ebebeb]'}`}>
+            {s.star && (
+              <span class="self-start bg-[#FF7500] text-white text-xs font-bold px-2 py-1 uppercase tracking-wide rounded-sm mb-4">Notre prestation phare</span>
+            )}
+            <h3 class={`text-xl font-bold mb-5 ${s.star ? 'text-white' : ''}`}>{s.title}</h3>
+            <p class={`flex-1 mb-10 leading-relaxed text-sm ${s.star ? 'text-gray-300' : 'text-gray-700'}`}>{s.text}</p>
             <a href={s.href} class="btn-orange w-full text-center py-4 text-xs font-bold tracking-widest uppercase rounded-lg">
               <span>{s.cta}</span>
             </a>
@@ -134,24 +138,24 @@ const atouts = [
           <p class="text-xs font-semibold tracking-widest uppercase text-gray-400">Nos travaux</p>
         </div>
         {domaines.map(d => (
-          <div class="flex flex-col">
+          <a href={d.href} class="flex flex-col group">
             <div class="aspect-[4/5] overflow-hidden mb-4">
               <img
                 src={d.img}
                 alt={d.alt}
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
-            <h3 class="text-xl font-bold mb-2">{d.title}</h3>
+            <h3 class="text-xl font-bold mb-2 group-hover:text-[#FF7500] transition-colors">{d.title}</h3>
             <p class="text-gray-500 text-sm">{d.text}</p>
-          </div>
+          </a>
         ))}
       </div>
 
       <div class="flex justify-center mt-16">
         <div class="btn-corner-wrap">
-          <a href="/services" class="btn-corner px-16 py-4 text-sm font-bold tracking-widest uppercase">
+          <a href="/domaines/facades" class="btn-corner px-16 py-4 text-sm font-bold tracking-widest uppercase">
             <span>Découvrir nos travaux</span>
           </a>
         </div>
