@@ -26,10 +26,10 @@ const services = [
 ];
 
 const domaines = [
-  { title: 'Votre maison', text: 'Rénovation, transformation, agrandissement — on intervient sur tous les corps de maçonnerie de votre maison.', img: '/images/maison.avif', alt: 'Maçonnerie maison district de Morges', href: '/services/execution' },
-  { title: 'Vos extérieurs', text: 'Dalles, murets, aménagements extérieurs — on façonne vos espaces avec soin.', img: '/images/exterieurs.jpg', alt: 'Espaces extérieurs maçonnerie Morges', href: '/domaines/amenagements-exterieurs' },
-  { title: 'Vos cheminées', text: 'Rénovation, chemisage, mise en conformité — on veille à la sécurité et à la durabilité de votre installation.', img: '/images/cheminee.jpg', alt: 'Rénovation cheminée canton de Vaud', href: '/domaines/cheminees' },
+  { title: 'Génie civil', text: 'Fondations, dalles portantes, béton armé, reprises en sous-œuvre.', img: '/images/maison.jpg', alt: 'Génie civil gros œuvre district de Morges', href: '/domaines/genie-civil' },
   { title: 'Vos façades', text: 'Réparation de fissures, crépissage, ravalement — après notre passage, vos façades retrouvent leur éclat.', img: '/images/facades.jpg', alt: 'Rénovation façade district de Morges', href: '/domaines/facades' },
+  { title: 'Vos cheminées', text: 'Rénovation, chemisage, mise en conformité — on veille à la sécurité et à la durabilité de votre installation.', img: '/images/cheminee.jpg', alt: 'Rénovation cheminée canton de Vaud', href: '/domaines/cheminees' },
+  { title: 'Vos extérieurs', text: 'Dalles, murets, aménagements extérieurs — on façonne vos espaces avec soin.', img: '/images/exterieurs.jpg', alt: 'Espaces extérieurs maçonnerie Morges', href: '/domaines/amenagements-exterieurs' },
   { title: 'Vos canalisations', text: 'Mauvaises odeurs, humidité, moisissures ? On diagnostique et on assainit vos canalisations.', img: '/images/canalisations.jpg', alt: 'Canalisations assainissement Vaud', href: '/domaines/canalisations' },
   { title: 'Vos sols', text: 'Chapes, dalles, planchers chauffants — on intervient de la fondation à la finition.', img: '/images/sols.jpg', alt: 'Sols dalles maçonnerie Morges', href: '/domaines/sols' },
 ];
@@ -105,10 +105,27 @@ const atouts = [
     </div>
   </section>
 
-  <!-- NOS SERVICES -->
-  <section class="pt-16 pb-24 bg-white">
+  <!-- BANDE RÉASSURANCE -->
+  <section class="border-b border-gray-100 bg-gray-50 py-8">
     <div class="max-w-[1440px] mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-16">Nos prestations</h2>
+      <div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
+        {atouts.map(a => (
+          <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#FF7500] flex-shrink-0"></span>
+            {a.label}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS PRESTATIONS -->
+  <section class="pt-20 pb-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">Comment on travaille ensemble</p>
+        <h2 class="text-3xl font-bold">Nos prestations</h2>
+      </div>
       <div class="grid md:grid-cols-3 gap-8">
         {services.map(s => (
           <div class={`service-card rounded-2xl p-10 flex flex-col ${s.star ? 'bg-gray-900 text-white' : 'bg-[#ebebeb]'}`}>
@@ -126,17 +143,14 @@ const atouts = [
     </div>
   </section>
 
-  <!-- INTERLOCUTEUR UNIQUE -->
-  <section class="py-20 bg-white">
+  <!-- NOS TRAVAUX -->
+  <section class="py-20 bg-white border-t border-gray-100">
     <div class="max-w-[1440px] mx-auto px-6">
-      <h2 class="max-w-4xl mb-6">
-        <span class="block text-base md:text-lg font-normal text-gray-400 mb-3">Que ce soit pour un service précis ou un projet complet,</span>
-        <span class="block text-2xl md:text-3xl font-bold text-gray-900">nous sommes votre interlocuteur unique.</span>
-      </h2>
-      <div class="grid md:grid-cols-3 gap-8 mt-14">
-        <div class="md:col-span-3 mb-2">
-          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400">Nos travaux</p>
-        </div>
+      <div class="mb-12">
+        <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">Quelle que soit la prestation choisie</p>
+        <h2 class="text-3xl font-bold">On intervient sur tous vos travaux.</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
         {domaines.map(d => (
           <a href={d.href} class="flex flex-col group">
             <div class="aspect-[4/5] overflow-hidden mb-4">
@@ -155,25 +169,22 @@ const atouts = [
 
       <div class="flex justify-center mt-16">
         <div class="btn-corner-wrap">
-          <a href="/domaines/facades" class="btn-corner px-16 py-4 text-sm font-bold tracking-widest uppercase">
-            <span>Découvrir nos travaux</span>
+          <a href="/domaines" class="btn-corner px-16 py-4 text-sm font-bold tracking-widest uppercase">
+            <span>Voir tous nos travaux</span>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BANDE RÉASSURANCE -->
-  <section class="border-y border-gray-100 bg-gray-50 py-8">
-    <div class="max-w-[1440px] mx-auto px-6">
-      <div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
-        {atouts.map(a => (
-          <div class="flex items-center gap-2 text-sm text-gray-600">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#FF7500] flex-shrink-0"></span>
-            {a.label}
-          </div>
-        ))}
-      </div>
+  <!-- CTA FINAL -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Votre projet, notre prochain chantier.</h2>
+      <p class="text-gray-400 mb-10">Devis gratuit. Première visite sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Nous contacter</span>
+      </a>
     </div>
   </section>
 
