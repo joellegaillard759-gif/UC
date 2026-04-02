@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const prestations = [
+  { titre: 'Fondations', desc: 'Fouilles, coffrage et coulage de fondations pour constructions neuves, agrandissements ou annexes — armature et béton dimensionnés selon les charges.' },
+  { titre: 'Dalles portantes', desc: 'Réalisation de dalles en béton armé pour sous-sol, rez-de-chaussée ou terrasse sur vide sanitaire — calcul de l\'armature et mise en œuvre soignée.' },
+  { titre: 'Murs en béton banché', desc: 'Coffrage et coulage de murs porteurs ou de soutènement en béton armé — pour les projets de caves, garages enterrés ou sous-sols.' },
+  { titre: 'Reprises en sous-œuvre', desc: 'Renforcement ou remplacement des fondations existantes sans démolir la structure au-dessus — technique délicate exécutée par étapes.' },
+  { titre: 'Assainissement de sous-sol', desc: 'Drainage périphérique, étanchéification des parois enterrées et reprise des infiltrations — pour retrouver un sous-sol sec et utilisable.' },
+  { titre: 'Terrassement et décapage', desc: 'Préparation du terrain pour toute construction : nivellement, décapage de la terre végétale, réalisation des fouilles selon les plans.' },
+];
+
+const faq = [
+  {
+    q: 'Quelle différence entre gros œuvre et génie civil ?',
+    a: "Le gros œuvre désigne la partie structurelle d'un bâtiment : fondations, murs porteurs, dalles, charpente — tout ce qui tient le bâtiment debout. Le génie civil couvre des ouvrages plus larges : ponts, routes, ouvrages de soutènement, réseaux — souvent en dehors du bâtiment lui-même. Urben Construction intervient sur les deux : travaux de structure pour vos bâtiments, mais aussi les ouvrages en béton liés à l'aménagement de votre parcelle (murs de soutènement, dalles techniques, assainissement de sol).",
+  },
+  {
+    q: 'Faut-il un permis pour réaliser des fondations dans le canton de Vaud ?',
+    a: "Oui, toute construction nouvelle ou extension significative nécessite un permis de construire dans le canton de Vaud. La demande de permis inclut les plans structurels, les calculs de charges et le rapport géotechnique si nécessaire. Nous travaillons avec les architectes et ingénieurs civils mandatés par nos clients et exécutons les travaux selon les plans approuvés.",
+  },
+  {
+    q: 'Qu\'est-ce qu\'une reprise en sous-œuvre ?',
+    a: "Une reprise en sous-œuvre consiste à renforcer ou remplacer les fondations d'un bâtiment existant sans démolir la structure au-dessus. C'est une intervention délicate, réalisée par étapes pour ne jamais déstabiliser l'édifice. Elle est nécessaire lorsque les fondations sont insuffisantes (bâtiment qui se fissure), lorsqu'on veut agrandir un sous-sol, ou lorsque le terrain a bougé. Nous réalisons ce type de travaux avec rigueur et méthode.",
+  },
+  {
+    q: "Comment assainir un sous-sol humide ?",
+    a: "L'humidité dans un sous-sol peut venir de trois sources : les remontées capillaires par le sol, les infiltrations latérales par les parois, ou la condensation. Le traitement dépend de l'origine. On commence par un diagnostic précis avant toute intervention. Les solutions vont du drainage périphérique extérieur (le plus efficace) à l'étanchéification intérieure par injection ou enduit, en passant par la ventilation. Un assainissement bien fait dure plusieurs décennies.",
+  },
+  {
+    q: "Intervenez-vous aussi sur des chantiers avec ingénieur civil ?",
+    a: "Oui. Sur les chantiers qui le nécessitent, nous travaillons en coordination avec l'ingénieur civil mandaté par le maître d'ouvrage ou l'architecte. Nous exécutons les travaux de structure selon les plans visés et les notes de calcul, et nous participons aux réunions de chantier. Notre expérience terrain nous permet d'anticiper les problèmes d'exécution et de les signaler en amont.",
+  },
+];
+---
+
+<Layout
+  title="Génie civil et gros œuvre — Fondations, béton armé | Urben Construction"
+  description="Fondations, dalles portantes, murs béton, reprises en sous-œuvre : Urben Construction réalise vos ouvrages de génie civil dans le district de Morges. Devis gratuit."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Génie civil et gros œuvre",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urben Construction",
+      "url": "https://urbenconstruction.ch",
+      "telephone": "+41218610155",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grancy",
+        "addressRegion": "Vaud",
+        "addressCountry": "CH"
+      }
+    },
+    "areaServed": "District de Morges, Vaud, Suisse",
+    "description": "Fondations, dalles portantes, béton armé, reprises en sous-œuvre et assainissement de sous-sol dans le district de Morges."
+  })} />
+
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/maison.jpg" alt="Génie civil et gros œuvre district de Morges" class="w-full h-full object-cover opacity-25" />
+    </div>
+    <div class="relative max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Génie civil et<br />gros œuvre.
+      </h1>
+      <p class="text-gray-300 mt-6 text-lg max-w-xl">
+        Fondations, dalles portantes, murs en béton, reprises en sous-œuvre — on intervient sur la structure de vos ouvrages avec rigueur et méthode.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander un devis gratuit</span>
+        </a>
+        <a href="tel:+41218610155" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          +41 21 861 01 55
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
+      <h2 class="text-3xl font-bold mb-4">Ce qui ne se voit pas, mais qui tient tout.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Les ouvrages de génie civil ne sont pas spectaculaires, mais ils conditionnent la durabilité de tout le reste. On les réalise avec la même exigence que le reste du chantier.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {prestations.map(p => (
+          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
+            <h3 class="text-base font-bold mb-2">{p.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO + TEXTE -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
+          <h2 class="text-3xl font-bold mb-6">25 ans de terrain, pas de raccourcis.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Les fondations ratées ou les bétons sous-dimensionnés, on en voit les conséquences des années après. On ne prend pas de raccourcis sur les travaux de structure — ni sur les épaisseurs, ni sur les armatures, ni sur les temps de coffrage.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">On travaille selon les plans visés par l'ingénieur civil et on signale tout écart ou problème d'exécution avant qu'il ne devienne un problème structurel.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
+          <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>Prendre contact</span>
+          </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/maison.jpg" alt="Gros œuvre béton armé Morges" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur le génie civil.</h2>
+        <div class="space-y-0">
+          {faq.map(item => (
+            <details class="group border-t border-gray-200">
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none select-none gap-4">
+                <span class="text-sm font-semibold text-gray-900 leading-snug">{item.q}</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 group-open:hidden">+</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 hidden group-open:block">−</span>
+              </summary>
+              <p class="pb-6 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un ouvrage de structure<br />à réaliser ?</h2>
+      <p class="text-gray-400 mb-10">Visite gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Demander une visite gratuite</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

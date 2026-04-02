@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const prestations = [
+  { titre: 'Rénovation de cheminée', desc: 'Reprise de la maçonnerie intérieure et extérieure, remplacement des briques réfractaires, rejointoiement — on remet votre foyer en état de fonctionner.' },
+  { titre: 'Chemisage de conduit', desc: 'Insertion d\'un tubage inox ou flexible dans le conduit existant pour améliorer le tirage et l\'étanchéité — solution idéale pour les vieilles installations.' },
+  { titre: 'Mise en conformité', desc: 'Vérification et adaptation de votre installation aux normes SIA et aux exigences du contrôle cantonal des feux (ECAB/ECA). Rapport de contrôle inclus.' },
+  { titre: 'Construction de cheminée', desc: 'Création d\'une nouvelle cheminée en maçonnerie avec foyer ouvert ou fermé — du socle à la souche, matériaux et finitions selon vos souhaits.' },
+  { titre: 'Réparation de souche', desc: 'Reprise des fissures, remplacement des éléments dégradés et étanchéification de la souche en toiture pour éviter les infiltrations.' },
+  { titre: 'Conduit de fumée', desc: 'Installation ou remplacement d\'un conduit de fumée pour poêle à bois, insert ou cuisinière — en conformité avec les normes en vigueur dans le canton de Vaud.' },
+];
+
+const faq = [
+  {
+    q: 'Quand faut-il rénover une cheminée ?',
+    a: 'Les principaux signaux d\'alerte sont : un tirage insuffisant, des odeurs de fumée dans la pièce, des fissures visibles sur la souche ou dans le foyer, de l\'humidité sur les murs à proximité du conduit, ou des dépôts noirs persistants. Une cheminée de plus de 30 ans mérite un diagnostic complet, même en l\'absence de problème apparent — les conduits se dégradent de l\'intérieur sans que cela soit toujours visible.',
+  },
+  {
+    q: 'Qu\'est-ce que le chemisage et dans quel cas est-il nécessaire ?',
+    a: 'Le chemisage consiste à insérer un tubage (inox rigide ou flexible) dans le conduit de fumée existant. Il est recommandé lorsque le conduit est fissuré, mal dimensionné pour le nouvel appareil (poêle, insert), ou lorsqu\'on change de combustible (bois, gaz, pellets). Le chemisage améliore le tirage, l\'étanchéité et la sécurité sans démolir le conduit existant.',
+  },
+  {
+    q: 'Faut-il un permis pour construire ou rénover une cheminée dans le canton de Vaud ?',
+    a: 'La construction d\'une nouvelle cheminée nécessite généralement une annonce ou un permis de construire, selon l\'ampleur des travaux et la commune. La rénovation d\'une cheminée existante (chemisage, reprise de maçonnerie) ne nécessite pas de permis, mais doit respecter les normes ECA (Établissement cantonal d\'assurance) et être contrôlée par le ramoneur officiel. On vous accompagne dans toutes les démarches.',
+  },
+  {
+    q: 'Combien coûte la rénovation d\'une cheminée dans le district de Morges ?',
+    a: 'Le coût dépend de l\'état de l\'installation et des travaux à réaliser. Un chemisage simple se situe entre CHF 1\'500 et CHF 3\'500. Une rénovation complète du foyer et de la souche peut coûter entre CHF 3\'000 et CHF 8\'000. La construction d\'une nouvelle cheminée en maçonnerie démarre généralement autour de CHF 8\'000. Seule une visite permet un chiffrage précis.',
+  },
+  {
+    q: 'Peut-on encore utiliser un foyer ouvert dans le canton de Vaud ?',
+    a: 'Oui, les foyers ouverts sont autorisés dans le canton de Vaud, mais soumis à des conditions d\'utilisation restrictives (combustibles autorisés, jours d\'utilisation selon la qualité de l\'air). En cas de remplacement ou de rénovation, certains cantons exigent une mise en conformité. Un insert fermé est souvent une alternative plus efficace et plus souple réglementairement. Nous vous informons lors de la visite.',
+  },
+];
+---
+
+<Layout
+  title="Rénovation et mise en conformité de cheminées — District de Morges | Urben Construction"
+  description="Chemisage, rénovation de foyer, mise en conformité ECA : Urben Construction intervient sur toutes vos cheminées dans le district de Morges. Devis gratuit."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Rénovation et mise en conformité de cheminées",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urben Construction",
+      "url": "https://urbenconstruction.ch",
+      "telephone": "+41218610155",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grancy",
+        "addressRegion": "Vaud",
+        "addressCountry": "CH"
+      }
+    },
+    "areaServed": "District de Morges, Vaud, Suisse",
+    "description": "Rénovation, chemisage, mise en conformité et construction de cheminées dans le district de Morges."
+  })} />
+
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/cheminee.jpg" alt="Rénovation cheminée district de Morges" class="w-full h-full object-cover opacity-25" />
+    </div>
+    <div class="relative max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Cheminées : rénovation,<br />chemisage, conformité.
+      </h1>
+      <p class="text-gray-300 mt-6 text-lg max-w-xl">
+        Foyer qui fume, conduit fissuré, installation hors norme — on diagnostique et on intervient durablement, dans les règles de l'art et de l'ECA.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander un devis gratuit</span>
+        </a>
+        <a href="tel:+41218610155" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          +41 21 861 01 55
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
+      <h2 class="text-3xl font-bold mb-4">Du conduit au foyer, on s'occupe de tout.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Rénovation, chemisage, mise en conformité ou construction neuve — on intervient sur tous les corps de maçonnerie liés à vos cheminées.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {prestations.map(p => (
+          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
+            <h3 class="text-base font-bold mb-2">{p.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO + TEXTE -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/cheminee.jpg" alt="Cheminée rénovée district de Morges" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
+          <h2 class="text-3xl font-bold mb-6">Sécurité et conformité avant tout.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Une cheminée mal entretenue ou hors norme, c'est un risque d'incendie. On ne prend pas ça à la légère. Avant d'intervenir, on inspecte l'état du conduit et du foyer, et on vous explique ce qu'on va faire et pourquoi.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Nos travaux sont réalisés en conformité avec les exigences de l'ECA Vaud. On coordonne si nécessaire avec le ramoneur officiel pour le contrôle final.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
+          <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>Prendre contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur les cheminées.</h2>
+        <div class="space-y-0">
+          {faq.map(item => (
+            <details class="group border-t border-gray-200">
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none select-none gap-4">
+                <span class="text-sm font-semibold text-gray-900 leading-snug">{item.q}</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 group-open:hidden">+</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 hidden group-open:block">−</span>
+              </summary>
+              <p class="pb-6 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un problème de cheminée ?<br />On vient voir.</h2>
+      <p class="text-gray-400 mb-10">Visite gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Demander une visite gratuite</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
