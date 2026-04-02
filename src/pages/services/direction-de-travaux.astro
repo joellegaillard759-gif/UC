@@ -174,12 +174,48 @@ import Footer from '../../components/Footer.astro';
           'Vous n\'avez pas le temps de gérer vous-même plusieurs artisans.',
           'Vous avez déjà eu de mauvaises expériences avec des chantiers mal coordonnés.',
           'Vous voulez quelqu\'un de confiance qui défend vos intérêts sur le chantier.',
+          'Vous gérez un portefeuille immobilier et les travaux vous prennent trop d\'énergie.',
+          'Vous devez rendre compte à des propriétaires ou une PPE et avez besoin de documentation claire.',
         ].map(item => (
           <div class="flex gap-4 bg-white rounded-2xl p-6">
             <span class="text-[#FF7500] font-black flex-shrink-0 mt-0.5">—</span>
             <p class="text-gray-700 text-sm leading-relaxed">{item}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GERANCES -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Gérances immobilières</p>
+          <h2 class="text-3xl font-bold mb-6">Vous gérez des biens.<br />On gère les travaux.</h2>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Un locataire signale une infiltration, une façade qui se dégrade, des canalisations bouchées. Vous devez trouver un artisan, coordonner l'accès, suivre le chantier, rendre compte au propriétaire — tout ça en plus de votre travail de gestionnaire.
+          </p>
+          <p class="text-gray-300 leading-relaxed mb-8">
+            On devient votre interlocuteur unique pour tous les travaux de votre portefeuille. Un seul appel, on s'occupe du reste — diagnostic, artisans, suivi, rapport avec photos pour le propriétaire.
+          </p>
+          <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>En parler avec nous</span>
+          </a>
+        </div>
+        <div class="space-y-4">
+          {[
+            { label: 'Un seul appel', desc: 'On reçoit le signalement et on prend en charge l\'évaluation et la coordination.' },
+            { label: 'Artisans de confiance', desc: 'Notre réseau est sélectionné et vérifié — pas besoin de chercher ou de comparer.' },
+            { label: 'Rapport transmissible', desc: 'Compte-rendu avec photos avant/après, devis et factures — tout ce qu\'il faut pour le propriétaire ou la PPE.' },
+            { label: 'Plusieurs biens, un partenaire', desc: 'On intervient sur l\'ensemble de votre portefeuille, pas uniquement sur un projet ponctuel.' },
+          ].map(item => (
+            <div class="border border-white/10 rounded-xl p-5">
+              <p class="font-bold text-white mb-1">{item.label}</p>
+              <p class="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
