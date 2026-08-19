@@ -4,45 +4,37 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const prestations = [
-  { titre: 'Dalles et terrasses', desc: 'Création de dalles béton ou en pavés pour terrasse, allée ou zone de stationnement — fondation, drainage et finition compris.' },
-  { titre: 'Murets et murs de soutènement', desc: 'Construction de murets en béton, en pierre ou en blocs préfabriqués pour délimiter, soutenir et structurer vos espaces extérieurs.' },
-  { titre: 'Escaliers extérieurs', desc: 'Création ou réfection d\'escaliers en béton coulé ou en pierre naturelle — résistants au gel, antidérapants et intégrés à votre aménagement.' },
-  { titre: 'Allées et chemins', desc: 'Mise en œuvre d\'allées en béton désactivé, stabilisé ou en pavés autobloquants — stables, drainants et adaptés à votre terrain.' },
-  { titre: 'Fondations pour annexes', desc: 'Réalisation de fondations pour abri de jardin, carport, pergola ou extension légère — selon les règles de l\'art et les contraintes du terrain.' },
-  { titre: 'Reprises et réparations', desc: 'Réparation de dalles fissurées, reprise de murets dégradés, rejointoiement de pavés — on remet vos extérieurs en état sans tout démolir.' },
+  { titre: "Terrasses et dalles extérieures", desc: "Dalle en béton, dallage sur lit de gravier ou pavés — avec la fondation, la pente d'écoulement et les joints de dilatation qui vont avec." },
+  { titre: "Murets et murs de soutènement", desc: "Muret de délimitation ou mur qui retient de la terre. Le second n'a rien à voir avec le premier : il faut une fondation calculée, un drainage derrière et des barbacanes, sinon la poussée finit par l'emporter." },
+  { titre: "Escaliers extérieurs", desc: "Escalier en béton coulé ou en pierre naturelle, avec des hauteurs de marche régulières, une pente d'égouttement et une finition qui ne devient pas glissante l'hiver." },
+  { titre: "Allées et places", desc: "Accès de garage, place de parc ou chemin : béton, pavés autobloquants ou stabilisé, sur un fond de forme compacté et dimensionné pour ce qui va rouler dessus." },
+  { titre: "Socles et fondations d'annexe", desc: "Bases pour abri de jardin, carport, pergola ou cabanon — descendues hors gel, même quand la construction est légère." },
+  { titre: "Reprises et réparations", desc: "Dalle fissurée, muret qui penche, pavés qui se déchaussent, escalier dont le nez s'effrite : reprendre la partie atteinte plutôt que tout démolir, quand c'est possible." },
 ];
 
 const faq = [
   {
-    q: 'Combien coûte une terrasse ou une dalle extérieure ?',
-    a: "Le coût dépend de la surface, des matériaux choisis et des travaux de terrassement préalables. Une dalle béton se situe généralement entre CHF 80 et CHF 150/m², finition comprise. Une terrasse en pavés ou en pierre naturelle démarre autour de CHF 120/m² et peut dépasser CHF 250/m² selon les matériaux. Dans le district de Morges, les coûts de main-d'œuvre sont dans la moyenne romande. Un devis précis nécessite une visite pour évaluer l'accès, la pente et l'état du terrain.",
+    q: "Pourquoi ma terrasse en béton se fissure ?",
+    a: "Trois causes reviennent presque toujours : un fond de forme mal compacté qui tasse ensuite, l'absence de joints de dilatation sur une grande surface, ou une dalle coulée trop mince pour ce qu'elle supporte. À cela s'ajoute le gel : l'eau qui reste sous la dalle gonfle en hiver et la soulève. C'est pour ça que le drainage compte autant que le béton lui-même.",
   },
   {
-    q: 'Faut-il un permis pour aménager ses extérieurs dans le canton de Vaud ?',
-    a: "La plupart des aménagements courants (dalles, terrasses, murets de moins de 1,20 m, allées) ne nécessitent pas de permis dans le canton de Vaud, à condition de ne pas modifier le terrain de façon significative. En revanche, un mur de soutènement important, une modification de la pente naturelle ou la création d'une grande surface imperméable peuvent nécessiter une annonce à la commune. Nous vérifions ce point avant de démarrer.",
+    q: "Quelle différence entre un muret et un mur de soutènement ?",
+    a: "Un muret ne porte que lui-même. Un mur de soutènement retient de la terre, et cette terre pousse — d'autant plus quand elle est gorgée d'eau. Il lui faut donc une fondation dimensionnée, souvent une armature, un drainage à l'arrière et des barbacanes pour évacuer l'eau. Un mur de soutènement construit comme un muret finit par basculer ; c'est le défaut qu'on répare le plus souvent dans ce domaine. Au-delà d'une certaine hauteur, un ingénieur civil doit le calculer.",
   },
   {
-    q: 'Quelle distance minimum par rapport à la limite de propriété ?',
-    a: "Les distances aux limites sont fixées par le plan d'affectation de chaque commune — elles varient donc selon l'endroit. En règle générale, un muret ou une clôture jusqu'à 1,20 m peut être posé en limite de propriété. Au-delà, une distance minimale s'applique (souvent 1 m). Un accès non couvert comme une allée peut généralement longer la limite. En cas de doute, on vérifie avec la commune avant de commencer — un litige de voisinage est plus coûteux qu'un contrôle préalable.",
+    q: "Faut-il une autorisation pour une terrasse ou un mur au jardin ?",
+    a: "Souvent, oui, au moins sous forme d'annonce à la commune. Les règles varient selon la commune, la distance à la limite de propriété et la hauteur du mur : un muret bas passe généralement sans problème, un mur de soutènement de plus d'un mètre presque jamais. On vérifie ce point avec vous avant de commencer.",
   },
   {
-    q: 'Ma terrasse se fissure après l\'hiver — c\'est normal ?',
-    a: "Non, ce n'est pas une fatalité. Les fissures après le gel-dégel viennent presque toujours d'une fondation insuffisante : sous-couche trop mince, terrain mal compacté, ou dalle posée sans joints de dilatation. Dans le district de Morges, les fondations extérieures doivent être réalisées hors gel (minimum 60 cm de profondeur) pour résister aux hivers. Une fissure qui réapparaît chaque année signale un problème de base — colmater la surface ne règle rien.",
-  },
-  {
-    q: 'Peut-on aménager un jardin en pente ?',
-    a: "Oui, et c'est l'une des configurations les plus fréquentes dans le district de Morges. Un terrain en pente nécessite un travail de terrassement et souvent des murs de soutènement pour créer des paliers utilisables. Selon la hauteur à soutenir, on choisit entre murets en béton banché, en blocs préfabriqués ou en pierres — chaque solution ayant ses avantages esthétiques et mécaniques. On évalue la meilleure approche lors d'une visite gratuite.",
-  },
-  {
-    q: 'Quelle différence entre une dalle en béton et une terrasse en pavés ?',
-    a: "Une dalle béton coulée offre une surface plane, durable et peu entretenue, idéale pour un usage intensif (stationnement, zone de travail). Les pavés autobloquants ou la pierre naturelle donnent un résultat esthétique plus chaud, avec une bonne perméabilité à l'eau — avantageux pour la gestion des eaux pluviales. Les deux solutions sont durables si la fondation est bien réalisée. Le choix dépend de l'usage, du style et du budget.",
+    q: "Quelle est la bonne saison pour ces travaux ?",
+    a: "Du printemps à l'automne. Le béton ne prend pas correctement par temps de gel, et une chape ou un dallage frais pris par le gel est à refaire. Le printemps est aussi le moment où l'on voit le mieux les dégâts de l'hiver précédent — c'est souvent là que les gens nous appellent.",
   },
 ];
 ---
 
 <Layout
-  title="Aménagements extérieurs — Dalles, murets, terrasses | Urben Construction"
-  description="Dalles béton, terrasses, murets de soutènement, escaliers extérieurs : Urben Construction aménage vos espaces extérieurs dans le district de Morges. Devis gratuit."
+  title="Aménagements extérieurs — Terrasses, murets, escaliers | Urben Construction"
+  description="Terrasses, dalles, murets et murs de soutènement, escaliers extérieurs et allées dans le district de Morges. Visite sur place gratuite."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -61,7 +53,7 @@ const faq = [
       }
     },
     "areaServed": "District de Morges, Vaud, Suisse",
-    "description": "Dalles, terrasses, murets, escaliers et allées dans le district de Morges."
+    "description": "Terrasses et dalles extérieures, murets et murs de soutènement, escaliers, allées et socles d'annexe dans le district de Morges."
   })} />
 
   <Navbar />
@@ -74,10 +66,10 @@ const faq = [
     <div class="relative max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
       <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
-        Dalles, murets et<br />aménagements extérieurs.
+        Aménagements<br />extérieurs.
       </h1>
       <p class="text-gray-300 mt-6 text-lg max-w-xl">
-        Terrasse, allée, escalier, mur de soutènement — on façonne vos espaces extérieurs avec les mêmes exigences que pour l'intérieur.
+        Terrasses, murets, escaliers et allées — de la maçonnerie qui passe l'hiver dehors.
       </p>
       <div class="flex flex-wrap gap-4 mt-10">
         <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
@@ -94,8 +86,8 @@ const faq = [
   <section class="py-20 bg-white">
     <div class="max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
-      <h2 class="text-3xl font-bold mb-4">Des extérieurs solides et soignés.</h2>
-      <p class="text-gray-500 mb-14 max-w-xl">Dalles, terrasses, murets ou escaliers — on réalise vos aménagements extérieurs dans les règles de l'art, avec une attention particulière aux fondations et au drainage.</p>
+      <h2 class="text-3xl font-bold mb-4">Dehors, tout est une question d'eau et de gel.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Un ouvrage extérieur subit chaque hiver ce qu'un mur intérieur ne subira jamais.</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {prestations.map(p => (
           <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
@@ -111,18 +103,18 @@ const faq = [
   <section class="py-20 bg-gray-50 border-y border-gray-100">
     <div class="max-w-[1440px] mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="/images/exterieurs.jpg" alt="Terrasse et aménagement extérieur Morges" class="w-full h-full object-cover" loading="lazy" />
-        </div>
         <div>
           <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
-          <h2 class="text-3xl font-bold mb-6">La qualité d'un chantier extérieur se voit dans dix ans.</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">Un aménagement extérieur mal réalisé, ça se dégrade vite : fissures, affaissement, problèmes de drainage. On soigne la préparation du terrain autant que la finition, parce que c'est là que tout se joue.</p>
-          <p class="text-gray-600 leading-relaxed mb-4">Le gel/dégel du district de Morges impose des fondations adaptées. On dimensionne systématiquement hors gel et on prévoit les joints de dilatation nécessaires.</p>
+          <h2 class="text-3xl font-bold mb-6">Ce qui se joue sous la surface.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Sur un aménagement extérieur, la partie visible représente une petite part du travail. Le reste — décaissement, fond de forme compacté, drainage, fondation hors gel — ne se verra jamais, mais c'est lui qui décide si l'ouvrage sera intact dans dix ans ou fissuré dans trois.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">C'est aussi la partie qu'on peut réduire pour faire baisser un devis. Quand un prix concurrent est nettement plus bas, c'est souvent là que se trouve la différence — regardez ce que chaque devis prévoit sous la dalle.</p>
           <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
           <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
             <span>Prendre contact</span>
           </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/exterieurs.jpg" alt="Terrasse et muret maçonnés dans le canton de Vaud" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>
@@ -154,8 +146,8 @@ const faq = [
   <!-- CTA -->
   <section class="py-20 bg-gray-900 text-white">
     <div class="max-w-[1440px] mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Votre projet extérieur,<br />notre prochain chantier.</h2>
-      <p class="text-gray-400 mb-10">Visite gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un extérieur à aménager ?</h2>
+      <p class="text-gray-400 mb-10">Visite sur place gratuite. Devis détaillé, sans engagement.</p>
       <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
         <span>Demander une visite gratuite</span>
       </a>

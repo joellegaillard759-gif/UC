@@ -6,12 +6,14 @@ const serviceLinks = [
 ];
 
 const domaineLinks = [
-  { label: 'Fondations & structure', href: '/domaines/genie-civil', desc: 'Fondations, dalles, béton armé' },
-  { label: 'Façades', href: '/domaines/facades', desc: 'Ravalement, crépissage, réparation' },
-  { label: 'Cheminées', href: '/domaines/cheminees', desc: 'Rénovation, chemisage, conformité' },
-  { label: 'Aménagements extérieurs', href: '/domaines/amenagements-exterieurs', desc: 'Dalles, murets, terrasses' },
-  { label: 'Canalisations', href: '/domaines/canalisations', desc: 'Assainissement & réfection' },
-  { label: 'Sols & chapes', href: '/domaines/sols', desc: 'Dalles, chapes, planchers chauffants' },
+  { label: 'Terrassement et fouilles', href: '/domaines/terrassement', desc: 'Fuites, talus, drainage' },
+  { label: 'Canalisations et assainissement', href: '/domaines/canalisations', desc: 'Eaux usées, eaux claires, séparatif' },
+  { label: 'Fondations', href: '/domaines/fondations', desc: 'Semelles, dalles, murs de jardin' },
+  { label: 'Murs', href: '/domaines/murs', desc: 'Brique, béton, cloisons' },
+  { label: 'Sols et planchers', href: '/domaines/sols', desc: 'Dalles béton, chapes' },
+  { label: 'Façades', href: '/domaines/facades', desc: 'Ravalement, balcons, encadrements' },
+  { label: 'Cheminées', href: '/domaines/cheminees', desc: 'Souche, foyer, étanchéité' },
+  { label: 'Aménagements extérieurs', href: '/domaines/amenagements-exterieurs', desc: 'Terrasses, murets, escaliers' },
 ];
 ---
 
@@ -34,7 +36,7 @@ const domaineLinks = [
           </svg>
         </button>
         <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
-          <div class="bg-white shadow-xl border border-gray-100 rounded-sm w-64 py-2">
+          <div class="bg-white shadow-xl border border-gray-100 rounded-sm w-80 py-2">
             {domaineLinks.map(d => (
               <a href={d.href} class="block px-5 py-3 hover:bg-gray-50 transition-colors group/item">
                 <span class="block text-sm font-semibold text-gray-900 group-hover/item:text-[#FF7500] transition-colors">{d.label}</span>

@@ -4,57 +4,53 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const signaux = [
-  { titre: 'Fissures et lézardes', desc: 'Fissures horizontales, verticales ou en escalier sur votre enduit ou votre maçonnerie — elles laissent entrer l\'eau.' },
-  { titre: 'Humidité et taches', desc: 'Auréoles, moisissures ou peinture qui cloque : la façade n\'est plus étanche et l\'humidité pénètre dans les murs.' },
-  { titre: 'Efflorescence', desc: 'Dépôts blancs poudreuxsur la surface : signe que les sels minéraux migrent à travers un enduit dégradé.' },
-  { titre: 'Crépi qui s\'écaille', desc: 'Plaques d\'enduit qui se détachent ou tombent — la façade perd sa protection et se dégrade rapidement.' },
+  { titre: "Fissures", desc: "Une fissure fine et stable dans l'enduit est courante. Une fissure qui traverse, qui suit les joints en escalier ou qui s'ouvre d'année en année demande à être regardée de près." },
+  { titre: "Taches et cloques", desc: "Auréoles sombres qui ne sèchent plus, peinture qui cloque, mousse verte au nord : l'eau reste dans l'enduit au lieu de s'évaporer." },
+  { titre: "Dépôts blancs", desc: "Une poudre blanche à la surface, c'est du sel que l'eau a transporté depuis l'intérieur du mur. Le nettoyer ne sert à rien tant que l'eau continue de passer." },
+  { titre: "Crépi qui se détache", desc: "Des plaques d'enduit qui sonnent creux ou tombent : le crépi n'adhère plus au support et la maçonnerie se retrouve à nu." },
 ];
 
 const prestations = [
-  { titre: 'Diagnostic façade', desc: 'Visite sur place, identification des zones dégradées, rapport détaillé et devis chiffré.' },
-  { titre: 'Réparation de fissures', desc: 'Traitement des fissures actives et passives, injection de résine, ragréage et finition teintée.' },
-  { titre: 'Ravalement et crépissage', desc: 'Dépose de l\'ancien enduit, préparation du support, application d\'un crépi neuf hydraulique ou siloxane.' },
-  { titre: 'Nettoyage haute pression', desc: 'Élimination des mousses, lichens et salissures avant traitement — sans endommager la maçonnerie.' },
-  { titre: 'Traitement hydrofuge', desc: 'Application d\'un hydrofuge de surface après ravalement pour protéger durablement la façade contre les intempéries.' },
-  { titre: 'Rejointoiement', desc: 'Reprise des joints de maçonnerie dégradés entre les pierres ou les briques — étanchéité et esthétique restaurées.' },
+  { titre: "Ravalement et crépissage", desc: "Dépose de l'ancien enduit là où il ne tient plus, préparation du support, puis application du nouveau crépi. Un hydrofuge de finition peut être appliqué ensuite selon l'exposition de la façade." },
+  { titre: "Réparation de fissures", desc: "Ouverture de la fissure, traitement du fond, pontage puis reprise de l'enduit et de la teinte. Une fissure qui bouge encore se traite différemment d'une fissure stabilisée — c'est ce qu'on regarde en premier." },
+  { titre: "Réfection de balcon", desc: "Un balcon en béton qui s'effrite laisse apparaître ses fers : ils rouillent, gonflent et font éclater le béton par-dessous. On pique jusqu'au béton sain, on traite l'armature, on reconstitue, puis on reprend l'étanchéité et le rejet d'eau." },
+  { titre: "Encadrement de fenêtre", desc: "Reprise de la maçonnerie autour d'une baie : embrasures, appui, linteau. C'est le travail qui accompagne un changement de fenêtres, ou qui répare les dégâts quand l'eau s'est infiltrée le long du cadre." },
+  { titre: "Rejointoiement", desc: "Dégarnissage et reprise des joints de maçonnerie dégradés entre les pierres ou les briques, avec un mortier compatible avec le mur d'origine." },
+  { titre: "Nettoyage avant travaux", desc: "Élimination des mousses, lichens et salissures pour retrouver le support avant de le traiter — sans pression excessive, qui abîme plus qu'elle ne nettoie." },
 ];
 
 const faq = [
   {
-    q: 'Ma façade est fissurée — c\'est dangereux ?',
-    a: 'Tout dépend du type de fissure. Une microfissure superficielle dans l\'enduit (moins de 0,2 mm) est souvent due à un retrait thermique et reste inoffensive. Une fissure traversante, en escalier ou évolutive est plus préoccupante : elle laisse entrer l\'eau, qui dégrade la structure progressivement. Une lézarde de plus d\'un centimètre, accompagnée de portes qui coincent ou de planchers qui bougent, nécessite une intervention rapide. En cas de doute, on vient voir — la visite est gratuite et sans engagement.',
+    q: "Ma façade est fissurée — c'est urgent ?",
+    a: "Ça dépend de la fissure. Une microfissure superficielle dans l'enduit est fréquente et sans conséquence structurelle : elle vient du retrait ou des écarts de température. Une fissure qui traverse le mur, qui s'ouvre d'une saison à l'autre, ou qui s'accompagne de portes qui coincent, mérite d'être regardée sans attendre. Le test le plus simple est de la mesurer et de la remesurer quelques mois plus tard.",
   },
   {
-    q: 'Combien coûte un ravalement de façade ?',
-    a: 'Le coût dépend de la surface, de l\'état de l\'enduit existant, du type de crépi choisi et des éventuels travaux de réparation préalables. À titre indicatif, un ravalement complet se situe entre CHF 60 et CHF 120 par m² de façade, échafaudage compris. Pour une maison individuelle de taille standard, on se situe souvent entre CHF 15\'000 et CHF 35\'000. Seule une visite sur place permet d\'établir un devis précis.',
+    q: "Faut-il une autorisation pour refaire une façade ?",
+    a: "Si vous refaites à l'identique — même teinte, même type d'enduit — une annonce à la commune suffit généralement. Dès que la couleur ou l'aspect change, ou si le bâtiment se trouve en zone protégée ou au recensement architectural, la commune doit donner son accord avant les travaux. En PPE, il faut aussi la décision de l'assemblée des copropriétaires. On vérifie ce point avec vous avant de démarrer.",
   },
   {
-    q: 'Si je ne fais rien, qu\'est-ce qui risque d\'arriver ?',
-    a: 'Une façade dégradée ne se stabilise pas d\'elle-même. L\'eau s\'infiltre par les fissures ou l\'enduit poreux, pénètre dans les murs et provoque humidité, moisissures et dégradation de la structure. En hiver, les cycles gel-dégel agrandissent les fissures rapidement. Ce qui aurait coûté CHF 3\'000 à traiter tôt peut en coûter dix fois plus quand les murs sont touchés en profondeur. Intervenir tôt est toujours moins cher.',
+    q: "Mon balcon s'effrite par en dessous, avec des traces de rouille — que faire ?",
+    a: "C'est le signe que l'eau atteint les fers de l'armature. En rouillant, l'acier gonfle et fait sauter le béton qui l'entoure, ce qui laisse passer encore plus d'eau : le phénomène s'accélère tout seul. Reboucher par-dessus ne fait que le cacher. Il faut piquer jusqu'au béton sain, traiter l'acier, reconstituer, puis rétablir l'étanchéité et l'égouttement. Plus on attend, plus la part à démolir est grande.",
   },
   {
-    q: 'Les fissures de ma façade impactent-elles la valeur de revente de ma maison ?',
-    a: 'Oui, significativement. Une façade fissurée ou dégradée est le premier signal négatif qu\'un acheteur potentiel perçoit — avant même d\'entrer dans la maison. Les experts estiment qu\'une maison avec des problèmes de façade visibles peut perdre entre 10 et 25% de sa valeur perçue, et déclenche systématiquement des demandes de réduction de prix ou des contre-expertises. Un ravalement avant vente est souvent rentabilisé plusieurs fois.',
+    q: "Quelle est la bonne saison pour un ravalement ?",
+    a: "Du printemps à l'automne. Les enduits ne prennent pas correctement en dessous d'environ 5 °C, et le gel sur un enduit frais le détruit. La pleine chaleur d'été n'est pas idéale non plus : un enduit qui sèche trop vite fissure. Les meilleures périodes sont donc le printemps et la fin d'été.",
   },
   {
-    q: 'Faut-il un permis de construire pour ravaler une façade dans le canton de Vaud ?',
-    a: 'Cela dépend du type de travaux. Un simple ravalement à l\'identique — même couleur, même texture — ne nécessite généralement pas de permis dans le canton de Vaud. En revanche, un changement de couleur de façade ou une modification de l\'aspect extérieur du bâtiment peut nécessiter une autorisation communale. Nous vérifions systématiquement ce point pour vous avant de démarrer.',
-  },
-  {
-    q: 'Quand faut-il ravaler une façade ?',
-    a: 'En règle générale, une façade en crépi demande un entretien tous les 15 à 25 ans selon l\'exposition, le type d\'enduit et les conditions climatiques. Les signaux d\'alerte sont clairs : fissures visibles, crépi qui s\'écaille, taches d\'humidité sur les murs intérieurs ou extérieurs, ou simplement une dégradation esthétique marquée. Intervenir tôt coûte toujours moins cher qu\'attendre que l\'eau pénètre dans la structure.',
+    q: "Faut-il un échafaudage ?",
+    a: "Dès qu'on travaille en hauteur sur une façade complète, oui — c'est une question de sécurité et de qualité de travail. Sa location représente une part réelle du devis, et elle figure en ligne séparée pour que vous la voyiez. Si d'autres travaux sont prévus sur la même façade (fenêtres, ferblanterie, toiture), les regrouper permet de ne payer l'échafaudage qu'une fois.",
   },
 ];
 ---
 
 <Layout
-  title="Ravalement et réfection de façade — District de Morges | Urben Construction"
-  description="Fissures, crépi qui s'écaille, humidité ? Urben Construction répare et ravale les façades dans le district de Morges. Devis gratuit sous 48h."
+  title="Façades — Ravalement, balcons, encadrements | Urben Construction"
+  description="Ravalement et rénovation de façade, réparation de fissures, réfection de balcons et encadrements de fenêtre dans le district de Morges."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Réfection et ravalement de façade",
+    "name": "Rénovation de façade",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Urben Construction",
@@ -68,7 +64,7 @@ const faq = [
       }
     },
     "areaServed": "District de Morges, Vaud, Suisse",
-    "description": "Ravalement de façade, réparation de fissures, crépissage, nettoyage et traitement hydrofuge dans le district de Morges."
+    "description": "Ravalement et rénovation de façade, réparation de fissures, réfection de balcons et encadrements de fenêtre dans le district de Morges."
   })} />
 
   <Navbar />
@@ -76,15 +72,15 @@ const faq = [
   <!-- HEADER -->
   <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/images/facades.jpg" alt="Réfection de façade district de Morges" class="w-full h-full object-cover opacity-30" />
+      <img src="/images/facades.jpg" alt="Rénovation de façade district de Morges" class="w-full h-full object-cover opacity-25" />
     </div>
     <div class="relative max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
       <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
-        Ravalement et réfection<br />de façade.
+        Façades.
       </h1>
       <p class="text-gray-300 mt-6 text-lg max-w-xl">
-        Fissures, crépi dégradé, humidité — on diagnostique, on répare et on protège durablement votre façade dans le district de Morges.
+        Ravalement, réparation de fissures, réfection de balcons et encadrements de fenêtre — la façade protège la maçonnerie autant qu'elle l'habille.
       </p>
       <div class="flex flex-wrap gap-4 mt-10">
         <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
@@ -97,12 +93,12 @@ const faq = [
     </div>
   </section>
 
-  <!-- SIGNAUX D'ALERTE -->
+  <!-- SIGNAUX -->
   <section class="py-20 bg-white">
     <div class="max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Reconnaître les signes</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl">Votre façade vous parle.<br />Savez-vous l'écouter ?</h2>
-      <p class="text-gray-500 mb-14 max-w-xl">Une façade dégradée ne se contente pas d'être inesthétique — elle laisse entrer l'eau et accélère la détérioration de la structure. Voici les signaux qui ne mentent pas.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl">Ce qu'il faut regarder.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Une façade abîmée n'est pas seulement laide : elle laisse entrer l'eau, et l'eau abîme ce qu'il y a derrière. Voici les quatre signes qui reviennent le plus souvent.</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {signaux.map(s => (
           <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
@@ -114,11 +110,11 @@ const faq = [
     </div>
   </section>
 
-  <!-- NOS PRESTATIONS -->
+  <!-- PRESTATIONS -->
   <section class="py-20 bg-gray-50 border-y border-gray-100">
     <div class="max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
-      <h2 class="text-3xl font-bold mb-14">Nos prestations façade</h2>
+      <h2 class="text-3xl font-bold mb-14">Nos travaux de façade</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {prestations.map(p => (
           <div class="bg-white rounded-xl p-6">
@@ -135,13 +131,13 @@ const faq = [
     <div class="max-w-[1440px] mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="/images/realisations/grancy-avant.jpg" alt="Rénovation façade Grancy" class="w-full h-full object-cover" loading="lazy" />
+          <img src="/images/realisations/grancy-avant.jpg" alt="Rénovation de façade à Grancy" class="w-full h-full object-cover" loading="lazy" />
         </div>
         <div>
           <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
-          <h2 class="text-3xl font-bold mb-6">On ne repeint pas par-dessus les problèmes.</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">Avant d'appliquer quoi que ce soit, on diagnostique le support. Une fissure mal traitée réapparaîtra dans 2 ans. Une fissure bien traitée disparaît définitivement.</p>
-          <p class="text-gray-600 leading-relaxed mb-4">On travaille avec nos propres maçons — pas de sous-traitance sur les travaux de réparation. Vous avez un interlocuteur du diagnostic à la livraison.</p>
+          <h2 class="text-3xl font-bold mb-6">Comprendre d'où vient l'eau avant de refermer.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Un enduit neuf appliqué sur un mur qui prend l'eau redevient exactement ce qu'il était, en deux ou trois hivers. On cherche donc d'abord par où l'eau entre : une fissure, un appui de fenêtre sans rejet, une ferblanterie percée, une remontée par le bas du mur. Parfois la réparation ne coûte presque rien et c'est le diagnostic qui valait la visite.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Nous sommes deux frères et nous faisons la maçonnerie nous-mêmes. Pour l'échafaudage, la ferblanterie ou la peinture, on fait appel à des artisans avec qui on travaille depuis longtemps — et vous gardez le même interlocuteur.</p>
           <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
           <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
             <span>Prendre contact</span>
@@ -156,7 +152,7 @@ const faq = [
     <div class="max-w-[1440px] mx-auto px-6">
       <div class="max-w-3xl">
         <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
-        <h2 class="text-3xl font-bold mb-12">Tout ce que vous voulez savoir sur la réfection de façade.</h2>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur les façades.</h2>
         <div class="space-y-0">
           {faq.map(item => (
             <details class="group border-t border-gray-200">
@@ -177,8 +173,8 @@ const faq = [
   <!-- CTA -->
   <section class="py-20 bg-gray-900 text-white">
     <div class="max-w-[1440px] mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Votre façade mérite un vrai diagnostic.</h2>
-      <p class="text-gray-400 mb-10">Visite gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Une façade à reprendre ?</h2>
+      <p class="text-gray-400 mb-10">Visite sur place gratuite. Devis détaillé, sans engagement.</p>
       <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
         <span>Demander une visite gratuite</span>
       </a>

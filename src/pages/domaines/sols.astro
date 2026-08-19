@@ -4,50 +4,42 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const prestations = [
-  { titre: 'Chape traditionnelle (liée)', desc: 'Chape en mortier de ciment coulée sur le support existant — solution classique pour les rénovations sans désolidarisation.' },
-  { titre: 'Chape flottante', desc: 'Chape posée sur une couche isolante phonique ou thermique — obligatoire dans les constructions neuves et recommandée en rénovation.' },
-  { titre: 'Plancher chauffant', desc: 'Intégration d\'un réseau de tuyaux dans la chape pour un chauffage par le sol — confort optimal et économies d\'énergie.' },
-  { titre: 'Dalle béton', desc: 'Fondation et dalle portante pour garage, sous-sol, terrasse ou extension — armature, coulage et finition compris.' },
-  { titre: 'Ragréage et reprise de sol', desc: 'Remise à niveau d\'un sol existant fissuré ou inégal avant pose du revêtement final (carrelage, parquet, résine).' },
-  { titre: 'Démolition et évacuation', desc: 'Dépose de l\'ancienne chape ou dalle, évacuation des gravats et préparation du support pour la nouvelle installation.' },
+  { titre: "Dalle en béton", desc: "Le plancher porteur : coffrage, armature et coulage d'une dalle en béton armé pour un sous-sol, un rez, un garage ou une extension." },
+  { titre: "Chape liée", desc: "Chape en mortier de ciment coulée directement sur le support, sans couche intermédiaire. C'est la solution la plus simple quand la hauteur disponible est limitée." },
+  { titre: "Chape flottante", desc: "Chape coulée sur un isolant phonique ou thermique, désolidarisée des murs. Plus épaisse, mais c'est elle qui coupe les bruits de pas entre deux niveaux." },
+  { titre: "Chape sur plancher chauffant", desc: "Le chauffagiste pose son réseau de tuyaux, on coule la chape par-dessus en respectant l'enrobage et les joints de fractionnement. La mise en chauffe se fait ensuite, progressivement." },
+  { titre: "Ragréage et remise à niveau", desc: "Rattrapage d'un sol existant creux, bosselé ou fissuré, pour que le revêtement final se pose sur un support plan." },
+  { titre: "Démolition et évacuation", desc: "Dépose d'une ancienne chape ou dalle, évacuation des gravats et préparation du support avant de recouler." },
 ];
 
 const faq = [
   {
-    q: 'Combien coûte une chape ?',
-    a: 'Le coût dépend de la surface, de l\'épaisseur, du type (liée, flottante, avec plancher chauffant) et des travaux de démolition préalables. À titre indicatif, une chape traditionnelle se situe entre CHF 30 et CHF 60 par m². Une chape avec plancher chauffant intégré coûte généralement entre CHF 80 et CHF 130 par m², matériaux et pose compris. Pour une pièce de 50 m², comptez entre CHF 1\'500 et CHF 6\'500 selon les cas.',
+    q: "Combien de temps faut-il attendre avant de poser le carrelage ou le parquet ?",
+    a: "Plus longtemps qu'on ne voudrait. Une chape ciment traditionnelle demande environ une semaine par centimètre d'épaisseur pour les premiers centimètres, et le séchage ralentit ensuite — pour une chape courante, comptez plutôt un à deux mois selon la saison et l'aération. Avec un plancher chauffant, il faut en plus faire la mise en chauffe avant la pose. Le carreleur ou le parqueteur mesure l'humidité résiduelle avant de commencer : c'est lui qui donne le feu vert, pas le calendrier.",
   },
   {
-    q: 'Peut-on poser un plancher chauffant en rénovation sans tout casser ?',
-    a: 'Oui, dans la plupart des cas. La condition principale est d\'avoir une hauteur sous plafond suffisante pour absorber l\'épaisseur de la nouvelle chape — généralement 8 à 12 cm. Si la hauteur est trop juste, des systèmes de plancher chauffant minces (3 à 5 cm) existent en alternative. On évalue la faisabilité et la meilleure solution lors d\'une visite gratuite, avant tout engagement.',
+    q: "Chape liée ou chape flottante ?",
+    a: "La chape flottante isole du bruit et du froid, mais demande de la hauteur — souvent 8 à 10 cm avec l'isolant. La chape liée prend moins de place et coûte moins cher, mais transmet les bruits. En rénovation, c'est très souvent la hauteur disponible sous les portes qui tranche la question.",
   },
   {
-    q: 'Combien de temps faut-il attendre avant de poser le carrelage ?',
-    a: 'Le temps de séchage d\'une chape ciment est d\'environ 1 semaine par centimètre d\'épaisseur, dans des conditions normales (20°C, bonne ventilation). Une chape de 5 cm nécessite donc au minimum 5 semaines. Ce délai est critique : poser trop tôt provoque des remontées d\'humidité qui dégradent les colles et les joints — et le problème n\'apparaît parfois que des mois plus tard. Nous établissons un planning de chantier en tenant compte de ces contraintes.',
+    q: "Mon carrelage sonne creux par endroits — c'est grave ?",
+    a: "Ça veut dire que le carreau n'adhère plus au support, soit parce que la colle a mal pris, soit parce que la chape en dessous se décolle ou s'est fissurée. Quelques carreaux isolés se reprennent. Si ça sonne creux sur une grande surface, c'est la chape qu'il faut reprendre, et refaire le revêtement par-dessus ne réglera rien.",
   },
   {
-    q: 'Ma chape se fissure — c\'est normal ?',
-    a: 'Les microfissures de retrait sur une chape fraîche sont courantes et généralement sans conséquence — elles se produisent pendant le séchage. En revanche, des fissures traversantes, régulières ou qui s\'élargissent avec le temps signalent un problème : séchage trop rapide, sous-couche insuffisante, absence de joints de dilatation, ou chape posée sur un support instable. Si votre revêtement (carrelage, parquet) se décolle ou se fissure, l\'origine est presque toujours dans la chape.',
-  },
-  {
-    q: 'Quelle différence entre une chape et une dalle ?',
-    a: 'La dalle béton est un élément structurel porteur — elle supporte les charges du bâtiment. La chape est une couche de finition coulée sur la dalle pour créer une surface plane, prête à recevoir le revêtement de sol. En rénovation, on travaille souvent sur la chape existante sans toucher à la dalle. En construction neuve ou lors d\'un agrandissement, on réalise les deux.',
-  },
-  {
-    q: 'Faut-il un permis pour couler une dalle dans le canton de Vaud ?',
-    a: 'Pour une reprise de chape intérieure, aucun permis n\'est nécessaire. La création d\'une nouvelle dalle (agrandissement, sous-sol, terrasse) peut en revanche nécessiter un permis de construire selon la nature du projet. Nous vérifions systématiquement ce point avant de démarrer et vous accompagnons dans les démarches si nécessaire.',
+    q: "Vous posez aussi le carrelage ?",
+    a: "Non — on s'arrête à la chape. La pose du carrelage, du parquet ou de la résine est un autre métier, et le résultat s'en ressent quand on veut faire les deux. Nous travaillons avec des carreleurs et des parqueteurs du coin, et si vous nous confiez le chantier entier, c'est nous qui les coordonnons.",
   },
 ];
 ---
 
 <Layout
-  title="Chapes, dalles et planchers chauffants — District de Morges | Urben Construction"
-  description="Chape, dalle béton, plancher chauffant ou ragréage : Urben Construction intervient sur tous vos sols dans le district de Morges. Devis gratuit sous 48h."
+  title="Sols et planchers — Dalles béton et chapes | Urben Construction"
+  description="Dalles en béton armé, chapes liées ou flottantes, chape sur plancher chauffant et ragréage dans le district de Morges. Visite sur place gratuite."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Chapes, dalles et planchers chauffants",
+    "name": "Sols et planchers",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Urben Construction",
@@ -61,7 +53,7 @@ const faq = [
       }
     },
     "areaServed": "District de Morges, Vaud, Suisse",
-    "description": "Chapes, dalles béton, planchers chauffants et ragréage dans le district de Morges."
+    "description": "Dalles en béton armé, chapes liées et flottantes, chape sur plancher chauffant et ragréage dans le district de Morges."
   })} />
 
   <Navbar />
@@ -69,15 +61,15 @@ const faq = [
   <!-- HEADER -->
   <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/images/sols.jpg" alt="Chape et dalle béton district de Morges" class="w-full h-full object-cover opacity-25" />
+      <img src="/images/sols.jpg" alt="Sols, dalles et chapes district de Morges" class="w-full h-full object-cover opacity-25" />
     </div>
     <div class="relative max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
       <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
-        Chapes, dalles et<br />planchers chauffants.
+        Sols et planchers.
       </h1>
       <p class="text-gray-300 mt-6 text-lg max-w-xl">
-        De la dalle portante au plancher chauffant en passant par la chape de finition — on intervient sur tous vos sols dans le district de Morges.
+        Dalle en béton, chape, ragréage — le support sur lequel tout le reste vient se poser.
       </p>
       <div class="flex flex-wrap gap-4 mt-10">
         <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
@@ -94,8 +86,8 @@ const faq = [
   <section class="py-20 bg-white">
     <div class="max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
-      <h2 class="text-3xl font-bold mb-4">De la fondation à la finition.</h2>
-      <p class="text-gray-500 mb-14 max-w-xl">Qu'il s'agisse de créer une nouvelle dalle, de reprendre une chape dégradée ou d'intégrer un plancher chauffant, on réalise les travaux avec nos propres équipes.</p>
+      <h2 class="text-3xl font-bold mb-4">De la dalle porteuse à la chape de finition.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Un carrelage qui se décolle ou un parquet qui gondole vient presque toujours de ce qu'il y a en dessous.</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {prestations.map(p => (
           <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
@@ -111,18 +103,18 @@ const faq = [
   <section class="py-20 bg-gray-50 border-y border-gray-100">
     <div class="max-w-[1440px] mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="/images/sols.jpg" alt="Pose chape plancher chauffant Morges" class="w-full h-full object-cover" loading="lazy" />
-        </div>
         <div>
           <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
-          <h2 class="text-3xl font-bold mb-6">Un sol bien posé, c'est un revêtement qui dure.</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">Un carrelage qui se décolle, un parquet qui gondole, des joints qui craquent — ces problèmes viennent presque toujours d'une chape mal réalisée ou posée trop tôt. On respecte les temps de séchage et les épaisseurs recommandées, sans prendre de raccourcis.</p>
-          <p class="text-gray-600 leading-relaxed mb-4">On coordonne aussi avec les autres corps de métier si nécessaire — plombier pour le réseau de chauffage, électricien pour les sondes — dans le cadre d'un chantier global.</p>
+          <h2 class="text-3xl font-bold mb-6">Une chape se juge au temps qu'on lui laisse.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">La plupart des problèmes de sol viennent d'un séchage écourté. La chape a l'air sèche en surface bien avant de l'être à cœur, et le revêtement posé trop tôt enferme l'humidité restante. C'est souvent là que se joue la différence entre un sol qui tient et un sol qu'il faut reprendre.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Sur un chantier avec plancher chauffant, on cale nos dates avec le chauffagiste et le carreleur avant de couler, pour que le planning tienne compte du séchage plutôt que de le subir.</p>
           <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
           <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
             <span>Prendre contact</span>
           </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/sols.jpg" alt="Coulage d'une chape dans le canton de Vaud" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>
@@ -133,7 +125,7 @@ const faq = [
     <div class="max-w-[1440px] mx-auto px-6">
       <div class="max-w-3xl">
         <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
-        <h2 class="text-3xl font-bold mb-12">Vos questions sur les chapes et dalles.</h2>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur les sols.</h2>
         <div class="space-y-0">
           {faq.map(item => (
             <details class="group border-t border-gray-200">
@@ -154,8 +146,8 @@ const faq = [
   <!-- CTA -->
   <section class="py-20 bg-gray-900 text-white">
     <div class="max-w-[1440px] mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Votre projet de sol,<br />notre prochain chantier.</h2>
-      <p class="text-gray-400 mb-10">Visite gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un sol à refaire ?</h2>
+      <p class="text-gray-400 mb-10">Visite sur place gratuite. Devis détaillé, sans engagement.</p>
       <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
         <span>Demander une visite gratuite</span>
       </a>

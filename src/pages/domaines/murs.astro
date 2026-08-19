@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const prestations = [
+  { titre: "Murs en brique", desc: "Montage en brique de terre cuite, pour un mur porteur ou une paroi de remplissage. Bonne inertie, bon comportement à l'humidité — c'est encore ce qui se fait le plus en rénovation." },
+  { titre: "Murs en bloc ciment", desc: "Montage en blocs de ciment, pleins ou creux, quand la charge ou le budget l'appelle : sous-sol, garage, mur enterré, local technique." },
+  { titre: "Murs en béton coulé", desc: "Coffrage, ferraillage et coulage sur place pour un mur porteur ou un mur enterré. C'est la solution quand le mur doit reprendre une poussée de terre ou une charge importante." },
+  { titre: "Murs de façade", desc: "La partie maçonnée d'une façade : monter un mur neuf, reprendre une portion déposée, fermer une ancienne ouverture ou en percer une nouvelle." },
+  { titre: "Cloisons de séparation", desc: "Séparer une pièce en maçonnerie plutôt qu'en plaques : c'est plus lourd et plus long à monter, mais nettement plus solide et bien meilleur contre le bruit." },
+  { titre: "Ouvertures et linteaux", desc: "Percer une baie dans un mur existant : étaiement, pose du linteau, reprise des tableaux et des appuis. Dans un mur porteur, la reprise de charge se calcule avant de toucher à quoi que ce soit." },
+];
+
+const faq = [
+  {
+    q: "Comment savoir si un mur est porteur ?",
+    a: "Quelques indices simples : un mur porteur est généralement plus épais (15 cm et plus), il sonne plein quand on frappe dessus, il se prolonge d'un étage à l'autre et il apparaît sur les plans de la maison. Mais aucun de ces indices ne suffit à lui seul — on a déjà vu des cloisons épaisses et des murs porteurs minces. Avant de percer, on vient regarder, et s'il y a un doute on fait intervenir un ingénieur.",
+  },
+  {
+    q: "Brique, bloc ciment ou béton — lequel choisir ?",
+    a: "Ça dépend de ce que le mur doit faire. Un mur qui retient de la terre ou porte une dalle lourde sera en béton coulé. Un mur de sous-sol ou de garage se fait très bien en bloc ciment. Un mur de façade ou une refend intérieure en habitation se monte souvent en brique, pour le confort thermique et parce que ça se travaille plus facilement. On vous dit ce qui convient et pourquoi, plutôt que de proposer d'office ce qu'on a l'habitude de monter.",
+  },
+  {
+    q: "Une cloison en maçonnerie plutôt qu'en plaques, ça vaut la peine ?",
+    a: "Pour une chambre à côté d'un séjour ou d'une salle de bains, souvent oui : la masse arrête le bruit là où une cloison légère le laisse passer. En revanche c'est plus cher, plus long, et ça demande un plancher capable de reprendre le poids. Dans un appartement à l'étage, ce n'est pas toujours possible.",
+  },
+  {
+    q: "Combien de temps pour monter un mur ?",
+    a: "Trop variable pour donner un chiffre utile ici : une cloison de séparation dans une pièce prend quelques jours, une façade complète plusieurs semaines, sans compter l'étaiement, le séchage et l'accès au chantier. On chiffre le délai en même temps que le devis, après avoir vu la situation sur place.",
+  },
+];
+---
+
+<Layout
+  title="Murs — Brique, béton, façade, cloison | Urben Construction"
+  description="Murs porteurs en brique, bloc ciment ou béton coulé, murs de façade, cloisons de séparation et ouvertures dans le district de Morges."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Murs et maçonnerie",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urben Construction",
+      "url": "https://urbenconstruction.ch",
+      "telephone": "+41218610155",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grancy",
+        "addressRegion": "Vaud",
+        "addressCountry": "CH"
+      }
+    },
+    "areaServed": "District de Morges, Vaud, Suisse",
+    "description": "Murs en brique, bloc ciment et béton coulé, murs de façade, cloisons de séparation et percement d'ouvertures dans le district de Morges."
+  })} />
+
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/realisations/la-sarraz-1.jpg" alt="Maçonnerie de murs district de Morges" class="w-full h-full object-cover opacity-25" />
+    </div>
+    <div class="relative max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Murs.
+      </h1>
+      <p class="text-gray-300 mt-6 text-lg max-w-xl">
+        Brique, bloc ciment ou béton coulé — murs porteurs, murs de façade et cloisons de séparation.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander un devis gratuit</span>
+        </a>
+        <a href="tel:+41218610155" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          +41 21 861 01 55
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
+      <h2 class="text-3xl font-bold mb-4">Le cœur du métier.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Monter un mur droit, d'aplomb et dans le bon matériau : c'est le travail qu'on fait depuis vingt-cinq ans.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {prestations.map(p => (
+          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
+            <h3 class="text-base font-bold mb-2">{p.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO + TEXTE -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
+          <h2 class="text-3xl font-bold mb-6">Un mur porteur ne se perce pas au jugé.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Ouvrir une baie dans un mur qui porte, c'est enlever de la matière à un ouvrage qui travaille. L'ordre compte : on étaie d'abord, on pose le linteau ensuite, on démolit en dernier. Fait dans le désordre, ça fissure — parfois un étage plus haut, des mois après.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Nous sommes deux frères et nous montons les murs nous-mêmes. Pour ce qui vient après — électricité, plâtrerie, peinture — on fait appel à des artisans avec qui on travaille depuis longtemps.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
+          <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>Prendre contact</span>
+          </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/realisations/la-sarraz-2.jpg" alt="Mur maçonné sur un chantier vaudois" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur les murs.</h2>
+        <div class="space-y-0">
+          {faq.map(item => (
+            <details class="group border-t border-gray-200">
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none select-none gap-4">
+                <span class="text-sm font-semibold text-gray-900 leading-snug">{item.q}</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 group-open:hidden">+</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 hidden group-open:block">−</span>
+              </summary>
+              <p class="pb-6 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un mur à monter<br />ou à ouvrir ?</h2>
+      <p class="text-gray-400 mb-10">Visite sur place gratuite. Devis détaillé, sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Demander une visite gratuite</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

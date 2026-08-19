@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const prestations = [
+  { titre: "Semelles de fondation", desc: "La bande de béton armé qui reçoit un mur et répartit sa charge sur le sol. Coffrage, armature et coulage, à une profondeur qui met la semelle hors gel." },
+  { titre: "Dalles de fondation", desc: "Une dalle en béton armé coulée sur toute l'emprise plutôt que des semelles séparées — souvent la solution pour une annexe, un garage ou un terrain peu porteur." },
+  { titre: "Fondations de mur de jardin", desc: "Un mur de jardin qui penche ou se fissure, c'est presque toujours sa fondation qui a bougé. On la descend hors gel et on la dimensionne pour la hauteur du mur, avant de monter quoi que ce soit." },
+  { titre: "Socles pour annexe légère", desc: "Plots ou longrines pour un abri de jardin, un carport, une pergola ou une extension légère — adaptés à la charge réelle, sans surdimensionner." },
+  { titre: "Coffrage et armature", desc: "Montage des coffrages, ferraillage et mise en place des attentes. Quand les plans viennent d'un ingénieur civil, on les suit et on signale ce qui ne joue pas avant de couler." },
+  { titre: "Reprise de fondation existante", desc: "Renforcement d'une fondation qui a tassé, par étapes successives pour ne jamais laisser le mur sans appui. Ce type de travail se fait sur la base d'un calcul d'ingénieur, pas à l'estime." },
+];
+
+const faq = [
+  {
+    q: "À quelle profondeur faut-il descendre une fondation ?",
+    a: "Assez bas pour être hors gel, c'est-à-dire sous la couche de terrain qui gèle en hiver. Sur le Pied du Jura vaudois, on descend en général à 80 cm au minimum, davantage en altitude ou quand le terrain est mauvais en surface. Une fondation trop haute travaille à chaque hiver : le sol gonfle, dégonfle, et le mur finit par fissurer.",
+  },
+  {
+    q: "Mon mur de jardin penche — faut-il tout refaire ?",
+    a: "Pas toujours. Si le mur lui-même est sain et que seule une portion a bougé, on peut souvent déposer cette portion, refaire la fondation dessous et remonter. Si le mur est fissuré sur toute sa longueur ou construit sans fondation du tout — ce qui arrive sur les vieux murs de propriété — il faut reprendre l'ensemble. On vient voir avant de vous dire lequel des deux.",
+  },
+  {
+    q: "Faut-il un ingénieur civil ?",
+    a: "Pour une annexe légère ou un mur de jardin courant, non. Dès qu'il y a une charge importante, un terrain douteux, ou qu'on touche à la fondation d'un bâtiment existant, oui — et nous vous le disons plutôt que de faire sans. Nous exécutons, nous ne calculons pas les structures. Si vous n'avez pas d'ingénieur, on peut vous en indiquer un.",
+  },
+  {
+    q: "Faut-il un permis pour des fondations ?",
+    a: "Toute construction nouvelle ou agrandissement notable passe par une demande de permis auprès de la commune. Pour un petit ouvrage — socle d'abri de jardin, mur bas — une annonce simple suffit souvent, mais les règles varient d'une commune à l'autre. On vérifie ce point avec vous avant de commencer.",
+  },
+];
+---
+
+<Layout
+  title="Fondations — Semelles, dalles, murs de jardin | Urben Construction"
+  description="Semelles de fondation, dalles, fondations de mur de jardin et socles d'annexe dans le district de Morges. Visite sur place gratuite."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Fondations",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urben Construction",
+      "url": "https://urbenconstruction.ch",
+      "telephone": "+41218610155",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grancy",
+        "addressRegion": "Vaud",
+        "addressCountry": "CH"
+      }
+    },
+    "areaServed": "District de Morges, Vaud, Suisse",
+    "description": "Semelles de fondation, dalles, fondations de mur de jardin et socles pour annexe dans le district de Morges."
+  })} />
+
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/maison.jpg" alt="Fondations et béton armé district de Morges" class="w-full h-full object-cover opacity-25" />
+    </div>
+    <div class="relative max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Fondations.
+      </h1>
+      <p class="text-gray-300 mt-6 text-lg max-w-xl">
+        Semelles, dalles, socles de mur de jardin — ce qui reçoit la charge et la rend au sol.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander un devis gratuit</span>
+        </a>
+        <a href="tel:+41218610155" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          +41 21 861 01 55
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
+      <h2 class="text-3xl font-bold mb-4">Ce qui ne se voit plus une fois le chantier fini.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Une fondation ne se rattrape pas après coup — c'est le seul ouvrage du chantier qu'on ne peut plus reprendre sans tout démonter.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {prestations.map(p => (
+          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
+            <h3 class="text-base font-bold mb-2">{p.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO + TEXTE -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
+          <h2 class="text-3xl font-bold mb-6">Hors gel, et sur un sol qui tient.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Deux choses font tenir une fondation : la profondeur, et le sol sur lequel elle repose. Le reste — béton, armature, coffrage — relève du travail bien fait. Alors on regarde d'abord le fond de fouille : s'il est mou, remblayé ou plein d'eau, on le dit avant de couler, pas après.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Quand le calcul dépasse ce qu'on peut estimer honnêtement, il faut un ingénieur civil. On travaille alors sur ses plans, et on lui signale tout écart constaté sur le terrain.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
+          <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>Prendre contact</span>
+          </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/realisations/perroy.jpg" alt="Fondation en béton armé sur un chantier vaudois" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur les fondations.</h2>
+        <div class="space-y-0">
+          {faq.map(item => (
+            <details class="group border-t border-gray-200">
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none select-none gap-4">
+                <span class="text-sm font-semibold text-gray-900 leading-snug">{item.q}</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 group-open:hidden">+</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 hidden group-open:block">−</span>
+              </summary>
+              <p class="pb-6 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Une fondation à couler ?</h2>
+      <p class="text-gray-400 mb-10">Visite sur place gratuite. Devis détaillé, sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Demander une visite gratuite</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

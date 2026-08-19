@@ -4,50 +4,42 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const prestations = [
-  { titre: 'Rénovation de cheminée', desc: 'Reprise de la maçonnerie intérieure et extérieure, remplacement des briques réfractaires, rejointoiement — on remet votre foyer en état de fonctionner.' },
-  { titre: 'Chemisage de conduit', desc: 'Insertion d\'un tubage inox ou flexible dans le conduit existant pour améliorer le tirage et l\'étanchéité — solution idéale pour les vieilles installations.' },
-  { titre: 'Mise en conformité', desc: 'Vérification et adaptation de votre installation aux normes SIA et aux exigences du contrôle cantonal des feux (ECAB/ECA). Rapport de contrôle inclus.' },
-  { titre: 'Construction de cheminée', desc: 'Création d\'une nouvelle cheminée en maçonnerie avec foyer ouvert ou fermé — du socle à la souche, matériaux et finitions selon vos souhaits.' },
-  { titre: 'Réparation de souche', desc: 'Reprise des fissures, remplacement des éléments dégradés et étanchéification de la souche en toiture pour éviter les infiltrations.' },
-  { titre: 'Conduit de fumée', desc: 'Installation ou remplacement d\'un conduit de fumée pour poêle à bois, insert ou cuisinière — en conformité avec les normes en vigueur dans le canton de Vaud.' },
+  { titre: "Réfection de souche", desc: "La partie de la cheminée qui sort du toit prend tout : pluie, gel, vent. Reprise des joints, remplacement des éléments éclatés, ou démolition et remontage complet quand elle est trop atteinte." },
+  { titre: "Étanchéité en toiture", desc: "Reprise du raccord entre la souche et la couverture — solin, bavette, contre-solin. C'est de là que viennent la plupart des infiltrations attribuées à la cheminée." },
+  { titre: "Rénovation du foyer", desc: "Reprise de la maçonnerie du foyer : remplacement des briques réfractaires, rejointoiement au mortier réfractaire, reconstruction de l'âtre." },
+  { titre: "Construction de cheminée", desc: "Montage d'une cheminée maçonnée, du socle à la souche. Le foyer ou l'insert est fourni et raccordé par le poêlier ; nous montons ce qui l'entoure et le conduit maçonné." },
+  { titre: "Travaux liés au tubage", desc: "Le tubage lui-même est posé par le ramoneur ou le poêlier. Nous faisons ce qui l'accompagne : ouverture du conduit, reprise de la maçonnerie, rebouchage et finitions." },
+  { titre: "Démolition de cheminée", desc: "Dépose d'une cheminée hors service, obturation du conduit, reprise du toit et du plafond — pour récupérer la place ou supprimer un point d'infiltration." },
 ];
 
 const faq = [
   {
-    q: 'Mon foyer fume dans la pièce — d\'où ça vient et est-ce dangereux ?',
-    a: 'Un foyer qui refoule de la fumée est toujours un signal à prendre au sérieux. Les causes les plus fréquentes sont un tirage insuffisant (conduit trop court, trop froid ou mal dimensionné), une obstruction partielle (dépôt de suie, nid d\'oiseau), une fissure dans le conduit, ou un problème de dépression dans la maison (VMC trop puissante). Au-delà de l\'inconfort, une installation défaillante peut émettre du monoxyde de carbone — un gaz inodore et toxique. On vient faire un diagnostic avant tout.',
+    q: "Mon foyer refoule la fumée dans la pièce — d'où ça vient ?",
+    a: "Souvent d'un manque d'air plutôt que d'un problème de conduit : une maison bien étanche, une hotte de cuisine ou une ventilation qui tourne créent une dépression, et la fumée prend le chemin le plus facile. Les autres causes fréquentes sont un conduit encrassé, une souche trop basse par rapport au faîte, ou un foyer mal dimensionné pour son conduit. Le premier réflexe est d'entrouvrir une fenêtre pour voir si ça change : si oui, c'est l'air. Ensuite, appelez votre ramoneur — c'est lui qui contrôle le conduit.",
   },
   {
-    q: 'Combien coûte la rénovation d\'une cheminée ?',
-    a: 'Le coût dépend de l\'état de l\'installation et des travaux à réaliser. Un chemisage simple se situe entre CHF 1\'500 et CHF 3\'500. Une rénovation complète du foyer et de la souche peut coûter entre CHF 3\'000 et CHF 8\'000. La construction d\'une nouvelle cheminée en maçonnerie démarre généralement autour de CHF 8\'000. Seule une visite permet un chiffrage précis.',
+    q: "Qui fait le contrôle officiel du conduit ?",
+    a: "Le ramoneur de votre secteur, désigné par la commune. C'est lui qui procède au ramonage réglementaire et qui atteste de la conformité de l'installation. Nous ne délivrons aucune attestation et nous ne remplaçons pas son contrôle. En revanche, quand il relève un défaut de maçonnerie, nous faisons les travaux — et nous préférons travailler avec lui plutôt qu'à sa place.",
   },
   {
-    q: 'Est-ce que je suis obligé de chemiser ma cheminée ?',
-    a: 'Pas systématiquement, mais dans plusieurs situations le chemisage devient indispensable : si vous installez un nouvel appareil (poêle, insert) dont le diamètre de raccordement diffère du conduit existant, si vous changez de combustible, ou si le conduit est fissuré et ne répond plus aux normes ECA. Le chemisage n\'est pas obligatoire sur un foyer ouvert existant qui fonctionne bien — mais il peut être recommandé pour améliorer le tirage et la sécurité. On évalue ça lors de la visite.',
+    q: "Ma souche laisse passer l'eau — faut-il tout démolir ?",
+    a: "Rarement. Dans la plupart des cas, l'eau ne passe pas par la maçonnerie mais par le raccord entre la souche et la couverture, ou par un couronnement fissuré. Reprendre le solin et le couronnement suffit alors. La démolition-reconstruction se justifie quand la maçonnerie elle-même est désagrégée par le gel sur toute la hauteur.",
   },
   {
-    q: 'Faut-il un permis pour construire ou rénover une cheminée dans le canton de Vaud ?',
-    a: 'La construction d\'une nouvelle cheminée nécessite généralement une annonce ou un permis de construire, selon l\'ampleur des travaux et la commune. La rénovation d\'une cheminée existante (chemisage, reprise de maçonnerie) ne nécessite pas de permis, mais doit respecter les normes ECA (Établissement cantonal d\'assurance) et être contrôlée par le ramoneur officiel. On vous accompagne dans toutes les démarches.',
-  },
-  {
-    q: 'Peut-on encore utiliser un foyer ouvert dans le canton de Vaud ?',
-    a: 'Oui, les foyers ouverts sont autorisés dans le canton de Vaud, mais soumis à des conditions d\'utilisation restrictives — combustibles autorisés, jours d\'utilisation limités selon la qualité de l\'air. En cas de remplacement ou de rénovation, une mise en conformité peut être exigée. Un insert fermé est souvent une alternative plus efficace thermiquement et plus souple réglementairement. Nous vous informons lors de la visite.',
-  },
-  {
-    q: 'Quelles garanties ai-je après les travaux sur ma cheminée ?',
-    a: 'En Suisse, la garantie légale est de 2 ans pour les défauts visibles à la réception, et de 5 ans pour les défauts cachés (Code des obligations, art. 371 CO). Nos travaux sont couverts par notre assurance responsabilité civile professionnelle. Pour les installations soumises au contrôle ECA, le ramoneur officiel effectue une inspection après travaux — c\'est lui qui valide la conformité de l\'installation.',
+    q: "Je veux supprimer une cheminée que je n'utilise plus.",
+    a: "C'est faisable, et souvent une bonne idée : une cheminée inutilisée continue de prendre l'eau et de coûter en entretien. Il faut décider jusqu'où descendre — souche seule, jusqu'aux combles, ou tout le conduit — reboucher proprement à chaque niveau traversé, et refaire la couverture au droit de l'ouverture. Si la cheminée dessert encore un autre logement, ce qui arrive en immeuble, la question se règle avant les travaux.",
   },
 ];
 ---
 
 <Layout
-  title="Rénovation et mise en conformité de cheminées — District de Morges | Urben Construction"
-  description="Chemisage, rénovation de foyer, mise en conformité ECA : Urben Construction intervient sur toutes vos cheminées dans le district de Morges. Devis gratuit."
+  title="Cheminées — Souche, foyer, étanchéité | Urben Construction"
+  description="Réfection de souche, étanchéité en toiture, rénovation de foyer et démolition de cheminée dans le district de Morges. Visite sur place gratuite."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Rénovation et mise en conformité de cheminées",
+    "name": "Cheminées",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Urben Construction",
@@ -61,7 +53,7 @@ const faq = [
       }
     },
     "areaServed": "District de Morges, Vaud, Suisse",
-    "description": "Rénovation, chemisage, mise en conformité et construction de cheminées dans le district de Morges."
+    "description": "Réfection de souche, étanchéité en toiture, rénovation de foyer, construction et démolition de cheminée dans le district de Morges."
   })} />
 
   <Navbar />
@@ -69,15 +61,15 @@ const faq = [
   <!-- HEADER -->
   <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/images/cheminee.jpg" alt="Rénovation cheminée district de Morges" class="w-full h-full object-cover opacity-25" />
+      <img src="/images/cheminee.jpg" alt="Rénovation de cheminée district de Morges" class="w-full h-full object-cover opacity-25" />
     </div>
     <div class="relative max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
       <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
-        Cheminées : rénovation,<br />chemisage, conformité.
+        Cheminées.
       </h1>
       <p class="text-gray-300 mt-6 text-lg max-w-xl">
-        Foyer qui fume, conduit fissuré, installation hors norme — on diagnostique et on intervient durablement, dans les règles de l'art et de l'ECA.
+        Souche, foyer, étanchéité en toiture — la maçonnerie de votre cheminée, du socle au chapeau.
       </p>
       <div class="flex flex-wrap gap-4 mt-10">
         <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
@@ -94,8 +86,8 @@ const faq = [
   <section class="py-20 bg-white">
     <div class="max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
-      <h2 class="text-3xl font-bold mb-4">Du conduit au foyer, on s'occupe de tout.</h2>
-      <p class="text-gray-500 mb-14 max-w-xl">Rénovation, chemisage, mise en conformité ou construction neuve — on intervient sur tous les corps de maçonnerie liés à vos cheminées.</p>
+      <h2 class="text-3xl font-bold mb-4">La maçonnerie, pas le ramonage.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Notre part, c'est la pierre, la brique et le mortier — de l'âtre jusqu'au chapeau.</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {prestations.map(p => (
           <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
@@ -111,18 +103,18 @@ const faq = [
   <section class="py-20 bg-gray-50 border-y border-gray-100">
     <div class="max-w-[1440px] mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="/images/cheminee.jpg" alt="Cheminée rénovée district de Morges" class="w-full h-full object-cover" loading="lazy" />
-        </div>
         <div>
           <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
-          <h2 class="text-3xl font-bold mb-6">Sécurité et conformité avant tout.</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">Une cheminée mal entretenue ou hors norme, c'est un risque d'incendie. On ne prend pas ça à la légère. Avant d'intervenir, on inspecte l'état du conduit et du foyer, et on vous explique ce qu'on va faire et pourquoi.</p>
-          <p class="text-gray-600 leading-relaxed mb-4">Nos travaux sont réalisés en conformité avec les exigences de l'ECA Vaud. On coordonne si nécessaire avec le ramoneur officiel pour le contrôle final.</p>
+          <h2 class="text-3xl font-bold mb-6">Chacun son métier.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Une cheminée fait intervenir trois métiers : le ramoneur pour le conduit et le contrôle, le poêlier pour le foyer et le tubage, le maçon pour tout ce qui est maçonné. Nous sommes le troisième. On ne délivre pas d'attestation de conformité et on ne se substitue pas au contrôle officiel.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Cela dit, la plupart des problèmes qu'on nous appelle à régler — souche fissurée, infiltration au droit du toit, couronnement éclaté par le gel — sont bien de la maçonnerie. Quand ce n'en est pas, on vous le dit et on vous oriente.</p>
           <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
           <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
             <span>Prendre contact</span>
           </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/cheminee.jpg" alt="Réfection de cheminée dans le canton de Vaud" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>
@@ -154,8 +146,8 @@ const faq = [
   <!-- CTA -->
   <section class="py-20 bg-gray-900 text-white">
     <div class="max-w-[1440px] mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un problème de cheminée ?<br />On vient voir.</h2>
-      <p class="text-gray-400 mb-10">Visite gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Une cheminée à reprendre ?</h2>
+      <p class="text-gray-400 mb-10">Visite sur place gratuite. Devis détaillé, sans engagement.</p>
       <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
         <span>Demander une visite gratuite</span>
       </a>

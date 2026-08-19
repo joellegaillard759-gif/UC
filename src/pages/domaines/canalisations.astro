@@ -3,58 +3,43 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
-const signaux = [
-  { titre: 'Mauvaises odeurs persistantes', desc: 'Des odeurs d\'égout qui remontent malgré le nettoyage : signe d\'un problème d\'étanchéité ou d\'un siphon défaillant.' },
-  { titre: 'Humidité et moisissures', desc: 'Traces d\'humidité sur les murs ou le sol, moisissures récurrentes : une canalisation fuit souvent à proximité.' },
-  { titre: 'Évacuations lentes', desc: 'L\'eau s\'écoule lentement, des gargouillis apparaissent — indicateurs d\'un encrassement ou d\'un rétrécissement de la canalisation.' },
-  { titre: 'Refoulements', desc: 'Eau qui remonte dans les évacuations — situation qui indique un bouchon ou une obstruction grave dans le réseau.' },
-];
-
 const prestations = [
-  { titre: 'Inspection caméra', desc: 'Passage d\'une caméra dans les conduites pour identifier précisément l\'origine et l\'étendue du problème sans fouille inutile.' },
-  { titre: 'Débouchage haute pression', desc: 'Nettoyage par jet haute pression pour éliminer les dépôts de graisse, calcaire et racines dans les conduites.' },
-  { titre: 'Réfection de canalisations', desc: 'Remplacement des conduites dégradées, fissurées ou obsolètes en PVC ou en fonte, avec remise en état du sol.' },
-  { titre: 'Assainissement de réseau', desc: 'Reprise complète d\'un réseau d\'évacuation : eaux usées, eaux pluviales et eaux-vannes, en conformité avec les normes SIA.' },
-  { titre: 'Chemisage de tuyaux', desc: 'Rénovation sans fouille par introduction d\'un manchon synthétique dans la canalisation existante — moins invasif et plus rapide.' },
-  { titre: 'Pose de regards et tampon', desc: 'Installation ou remplacement de regards d\'accès, tampons de visite et séparateurs — pour faciliter l\'entretien futur.' },
+  { titre: "Réparation de fuite", desc: "Remplacement de la portion de conduite en cause une fois la fuite localisée — puis remblai et remise en état du sol ouvert." },
+  { titre: "Mise en séparatif", desc: "Séparer le réseau d'eaux usées de celui des eaux claires, comme les communes vaudoises le demandent lors d'une rénovation ou d'un nouveau raccordement. Deux réseaux distincts jusqu'à la limite de parcelle." },
+  { titre: "Eaux usées", desc: "Pose ou remplacement des conduites d'évacuation entre la maison et le collecteur communal : WC, cuisine, salle de bains, buanderie." },
+  { titre: "Eaux claires", desc: "Reprise des descentes de toiture et des écoulements de surface, vers le collecteur d'eaux claires ou vers une infiltration sur la parcelle, selon ce qu'autorise la commune." },
+  { titre: "Fourreaux de télécommunication", desc: "Pose des tubes qui recevront les câbles — téléphone, fibre, électricité — entre la limite de parcelle et le bâtiment, en même temps que la tranchée d'assainissement." },
+  { titre: "Regards et remise en état", desc: "Pose ou remplacement des regards de visite et des tampons, pour que le réseau reste accessible ensuite. Puis rebouchage et remise en état de la surface." },
 ];
 
 const faq = [
   {
-    q: 'Mauvaise odeur d\'égout chez moi — d\'où ça vient ?',
-    a: 'Les odeurs d\'égout persistantes ont presque toujours l\'une de ces trois causes : un siphon asséché (il suffit de faire couler l\'eau), un siphon défaillant ou fissuré, ou un défaut d\'étanchéité dans le réseau. Si l\'odeur revient malgré le nettoyage, c\'est le signe d\'un problème plus profond. Au-delà du désagrément, ces odeurs peuvent indiquer des émanations de gaz nocifs (H2S, méthane). Mieux vaut ne pas attendre — un diagnostic caméra localise le problème sans travaux inutiles.',
+    q: "C'est quoi, la mise en séparatif ?",
+    a: "C'est le fait d'avoir deux réseaux distincts : un pour les eaux usées (WC, cuisine, douche) qui part vers la station d'épuration, et un pour les eaux claires (pluie de toiture, écoulements de surface) qui part vers un cours d'eau ou s'infiltre sur la parcelle. Beaucoup de maisons anciennes n'ont qu'un seul tuyau pour les deux. Les communes vaudoises demandent la séparation lors d'une rénovation d'assainissement ou d'un nouveau raccordement. Le règlement varie d'une commune à l'autre — c'est le service technique communal qui donne les exigences exactes.",
   },
   {
-    q: 'Combien coûte un débouchage ou un assainissement de canalisations ?',
-    a: 'Le coût varie selon l\'ampleur des travaux, l\'accessibilité des conduites et la technique utilisée. Un débouchage simple se situe entre CHF 200 et CHF 500. Une réfection partielle (remplacement d\'un tronçon) coûte généralement entre CHF 1\'500 et CHF 5\'000. Un assainissement complet du réseau d\'une maison individuelle peut aller de CHF 8\'000 à CHF 25\'000. Seul un diagnostic préalable permet un chiffrage précis.',
+    q: "J'ai un bouchon ou une mauvaise odeur — vous pouvez venir ?",
+    a: "Pas pour un bouchon. Nous n'avons ni caméra d'inspection ni camion hydrocureur : pour déboucher ou inspecter une conduite, appelez un service spécialisé, c'est plus rapide et moins cher. Nous, on intervient quand la conduite elle-même est en cause — cassée, affaissée, mal pentée, ou à remplacer. Si un service de débouchage vous dit que le problème revient à cause du tuyau, c'est là qu'on prend le relais.",
   },
   {
-    q: 'Locataire ou propriétaire — qui paie les travaux de canalisation ?',
-    a: 'En Suisse, la règle générale est la suivante : le locataire est responsable du petit entretien courant (débouchage d\'un siphon, entretien d\'un siphon de sol). Le propriétaire est responsable des canalisations principales et de tout ce qui touche à la structure du bâtiment ou au réseau enterré. En pratique, la limite est souvent floue — l\'inspection caméra permet de localiser précisément le problème et de déterminer clairement qui doit intervenir.',
+    q: "Qui paie la conduite entre ma maison et la route ?",
+    a: "La partie privée — de la maison jusqu'au point de raccordement défini par la commune — est à la charge du propriétaire, entretien compris. Au-delà, c'est le réseau communal. Le point de séparation exact figure au règlement communal d'évacuation des eaux, et il n'est pas toujours en limite de parcelle. On le vérifie avec vous avant de chiffrer.",
   },
   {
-    q: 'Peut-on rénover des canalisations sans casser les murs ?',
-    a: 'Oui, dans certains cas, grâce au chemisage — aussi appelé réhabilitation sans fouille. Un manchon synthétique imprégné de résine est inséré dans la canalisation existante, puis gonflé et durci sur place. Cette technique évite la démolition et les travaux de remise en état, mais n\'est pas applicable dans toutes les situations (coudes serrés, état trop dégradé). L\'inspection caméra préalable détermine si c\'est possible.',
-  },
-  {
-    q: 'Qui est responsable des canalisations dans un immeuble en Suisse ?',
-    a: 'Les canalisations privées — situées à l\'intérieur du bâtiment et jusqu\'au raccordement au réseau communal — sont à la charge du propriétaire. Les canalisations publiques (réseau communal) relèvent de la commune. En cas de doute sur la limite, une inspection caméra permet de localiser précisément le problème et de déterminer qui doit intervenir.',
-  },
-  {
-    q: 'Faut-il un permis pour refaire les canalisations dans le canton de Vaud ?',
-    a: 'Les travaux de remplacement de canalisations existantes à l\'identique ne nécessitent généralement pas de permis dans le canton de Vaud. En revanche, si les travaux impliquent une modification du raccordement au réseau communal ou une nouvelle installation de fosse, un avis à la commune et parfois une autorisation sont requis. Nous nous chargeons de ces démarches dans le cadre de nos chantiers.',
+    q: "Vous posez aussi les fourreaux pour la fibre ou l'électricité ?",
+    a: "Oui, et c'est le bon moment pour le faire : la tranchée est déjà ouverte. On pose les tubes vides, avec un fil de tirage à l'intérieur. Le passage des câbles et le raccordement, en revanche, sont faits par l'électricien ou l'opérateur.",
   },
 ];
 ---
 
 <Layout
-  title="Assainissement et réfection de canalisations — District de Morges | Urben Construction"
-  description="Mauvaises odeurs, humidité, évacuations bouchées ? Urben Construction diagnostique et assainit vos canalisations dans le district de Morges. Devis gratuit."
+  title="Canalisations et assainissement — District de Morges | Urben Construction"
+  description="Fuite d'eau, mise en séparatif, eaux usées et eaux claires, fourreaux de télécommunication dans le district de Morges. Visite sur place gratuite."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Assainissement et réfection de canalisations",
+    "name": "Canalisations et assainissement",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Urben Construction",
@@ -68,7 +53,7 @@ const faq = [
       }
     },
     "areaServed": "District de Morges, Vaud, Suisse",
-    "description": "Diagnostic, débouchage, réfection et assainissement de canalisations dans le district de Morges."
+    "description": "Réparation de fuite, mise en séparatif, eaux usées, eaux claires et fourreaux de télécommunication dans le district de Morges."
   })} />
 
   <Navbar />
@@ -76,15 +61,15 @@ const faq = [
   <!-- HEADER -->
   <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/images/canalisations.jpg" alt="Assainissement canalisations district de Morges" class="w-full h-full object-cover opacity-25" />
+      <img src="/images/canalisations.jpg" alt="Canalisations et assainissement district de Morges" class="w-full h-full object-cover opacity-25" />
     </div>
     <div class="relative max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
       <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
-        Assainissement et réfection<br />de canalisations.
+        Canalisations<br />et assainissement.
       </h1>
       <p class="text-gray-300 mt-6 text-lg max-w-xl">
-        Mauvaises odeurs, humidité, évacuations lentes — on diagnostique la cause exacte et on intervient durablement, sans travaux inutiles.
+        Fuite, mise en séparatif, eaux usées, eaux claires et fourreaux — le réseau enterré entre votre maison et la route.
       </p>
       <div class="flex flex-wrap gap-4 mt-10">
         <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
@@ -97,31 +82,15 @@ const faq = [
     </div>
   </section>
 
-  <!-- SIGNAUX D'ALERTE -->
+  <!-- PRESTATIONS -->
   <section class="py-20 bg-white">
     <div class="max-w-[1440px] mx-auto px-6">
-      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Reconnaître les signes</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl">Les problèmes de canalisation<br />ne se résolvent pas seuls.</h2>
-      <p class="text-gray-500 mb-14 max-w-xl">Ignorer un signal d'alerte coûte toujours plus cher à terme — une fuite non traitée peut endommager la structure d'un bâtiment en quelques mois.</p>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {signaux.map(s => (
-          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
-            <h3 class="text-base font-bold mb-2">{s.titre}</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- PRESTATIONS -->
-  <section class="py-20 bg-gray-50 border-y border-gray-100">
-    <div class="max-w-[1440px] mx-auto px-6">
       <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
-      <h2 class="text-3xl font-bold mb-14">Nos prestations canalisations</h2>
+      <h2 class="text-3xl font-bold mb-4">Le réseau qu'on ne voit qu'une fois ouvert.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Poser, remplacer, séparer, raccorder — et refermer proprement derrière.</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {prestations.map(p => (
-          <div class="bg-white rounded-xl p-6">
+          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
             <h3 class="text-base font-bold mb-2">{p.titre}</h3>
             <p class="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
           </div>
@@ -130,33 +99,33 @@ const faq = [
     </div>
   </section>
 
-  <!-- TEXTE -->
-  <section class="py-20 bg-white">
+  <!-- PHOTO + TEXTE -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
     <div class="max-w-[1440px] mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
           <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
-          <h2 class="text-3xl font-bold mb-6">D'abord diagnostiquer. Ensuite intervenir.</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">On n'ouvre pas les murs au hasard. Avant toute intervention, on localise précisément le problème — par inspection caméra si nécessaire — pour n'intervenir qu'au bon endroit.</p>
-          <p class="text-gray-600 leading-relaxed mb-4">On réalise les travaux de maçonnerie, de terrassement et de remise en état avec nos propres équipes. Pas de sous-traitance : vous avez un interlocuteur unique du diagnostic à la fin du chantier.</p>
-          <p class="text-gray-600 leading-relaxed mb-8">Intervention dans le district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
+          <h2 class="text-3xl font-bold mb-6">Ce qu'on fait, et ce qu'on ne fait pas.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">On ne fait pas d'inspection par caméra et on ne débouche pas : ce sont d'autres métiers, avec d'autres machines. Notre part commence quand il faut ouvrir le sol et remplacer la conduite.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Pour situer le problème, on travaille avec ce qui existe : les plans du réseau, les regards, la pente, l'âge de la maison. Quand un doute demeure, on ouvre une petite fouille de contrôle avant de chiffrer le reste — mieux vaut une tranchée d'essai qu'un devis à l'aveugle.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
           <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
             <span>Prendre contact</span>
           </a>
         </div>
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="/images/canalisations.jpg" alt="Travaux canalisations district de Morges" class="w-full h-full object-cover" loading="lazy" />
+          <img src="/images/canalisations.jpg" alt="Pose de canalisations dans le canton de Vaud" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="py-20 bg-gray-50 border-t border-gray-100">
+  <section class="py-20 bg-white">
     <div class="max-w-[1440px] mx-auto px-6">
       <div class="max-w-3xl">
         <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
-        <h2 class="text-3xl font-bold mb-12">Vos questions sur l'assainissement de canalisations.</h2>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur les canalisations.</h2>
         <div class="space-y-0">
           {faq.map(item => (
             <details class="group border-t border-gray-200">
@@ -177,8 +146,8 @@ const faq = [
   <!-- CTA -->
   <section class="py-20 bg-gray-900 text-white">
     <div class="max-w-[1440px] mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un problème de canalisation ?<br />On vient voir.</h2>
-      <p class="text-gray-400 mb-10">Visite diagnostic gratuite · Devis détaillé sous 48h · Sans engagement.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Une conduite à remplacer ?</h2>
+      <p class="text-gray-400 mb-10">Visite sur place gratuite. Devis détaillé, sans engagement.</p>
       <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
         <span>Demander une visite gratuite</span>
       </a>

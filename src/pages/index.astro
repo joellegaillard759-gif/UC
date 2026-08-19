@@ -26,12 +26,14 @@ const services = [
 ];
 
 const domaines = [
-  { title: 'Vos fondations', text: 'Fondations, dalles portantes, reprises en sous-œuvre — ce qui ne se voit pas, mais qui tient tout.', img: '/images/maison.jpg', alt: 'Génie civil gros œuvre district de Morges', href: '/domaines/genie-civil' },
-  { title: 'Vos façades', text: 'Réparation de fissures, crépissage, ravalement — après notre passage, vos façades retrouvent leur éclat.', img: '/images/facades.jpg', alt: 'Rénovation façade district de Morges', href: '/domaines/facades' },
-  { title: 'Vos cheminées', text: 'Rénovation, chemisage, mise en conformité — on veille à la sécurité et à la durabilité de votre installation.', img: '/images/cheminee.jpg', alt: 'Rénovation cheminée canton de Vaud', href: '/domaines/cheminees' },
-  { title: 'Vos extérieurs', text: 'Dalles, murets, aménagements extérieurs — on façonne vos espaces avec soin.', img: '/images/exterieurs.jpg', alt: 'Espaces extérieurs maçonnerie Morges', href: '/domaines/amenagements-exterieurs' },
-  { title: 'Vos canalisations', text: 'Mauvaises odeurs, humidité, moisissures ? On diagnostique et on assainit vos canalisations.', img: '/images/canalisations.jpg', alt: 'Canalisations assainissement Vaud', href: '/domaines/canalisations' },
-  { title: 'Vos sols', text: 'Chapes, dalles, planchers chauffants — on intervient de la fondation à la finition.', img: '/images/sols.jpg', alt: 'Sols dalles maçonnerie Morges', href: '/domaines/sols' },
+  { title: 'Terrassement et fouilles', text: "Recherche de fuite, talus, tranchées de drainage et de canalisation — le travail qui vient avant tous les autres.", img: '/images/realisations/eclepens.jpg', alt: 'Terrassement et fouilles district de Morges', href: '/domaines/terrassement' },
+  { title: 'Canalisations et assainissement', text: "Fuite, mise en séparatif, eaux usées et eaux claires — le réseau enterré entre votre maison et la route.", img: '/images/canalisations.jpg', alt: 'Canalisations assainissement Vaud', href: '/domaines/canalisations' },
+  { title: 'Fondations', text: "Semelles, dalles, socles de mur de jardin — ce qui reçoit la charge et la rend au sol.", img: '/images/maison.jpg', alt: 'Fondations béton armé district de Morges', href: '/domaines/fondations' },
+  { title: 'Murs', text: "Brique, bloc ciment ou béton coulé : murs porteurs, murs de façade et cloisons de séparation.", img: '/images/realisations/la-sarraz-1.jpg', alt: 'Maçonnerie de murs Morges', href: '/domaines/murs' },
+  { title: 'Sols et planchers', text: "Dalle en béton, chape, ragréage — le support sur lequel tout le reste vient se poser.", img: '/images/sols.jpg', alt: 'Sols dalles et chapes Morges', href: '/domaines/sols' },
+  { title: 'Façades', text: "Ravalement, fissures, réfection de balcons et encadrements de fenêtre — la façade protège autant qu'elle habille.", img: '/images/facades.jpg', alt: 'Rénovation façade district de Morges', href: '/domaines/facades' },
+  { title: 'Cheminées', text: "Souche, foyer, étanchéité en toiture — la maçonnerie de votre cheminée, du socle au chapeau.", img: '/images/cheminee.jpg', alt: 'Rénovation cheminée canton de Vaud', href: '/domaines/cheminees' },
+  { title: 'Aménagements extérieurs', text: "Terrasses, murets, escaliers et allées — de la maçonnerie qui passe l'hiver dehors.", img: '/images/exterieurs.jpg', alt: 'Espaces extérieurs maçonnerie Morges', href: '/domaines/amenagements-exterieurs' },
 ];
 
 const atouts = [
@@ -150,7 +152,7 @@ const atouts = [
         <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">Quelle que soit la prestation choisie</p>
         <h2 class="text-3xl font-bold">On intervient sur tous vos travaux.</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {domaines.map(d => (
           <a href={d.href} class="flex flex-col group">
             <div class="aspect-[4/5] overflow-hidden mb-4">

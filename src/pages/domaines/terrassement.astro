@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const prestations = [
+  { titre: "Recherche de fuite d'eau", desc: "Une conduite qui fuit sous terre laisse des indices : un compteur qui tourne alors que tout est fermé, un sol qui reste humide, un revêtement qui s'affaisse. On recoupe ces indices avec le tracé des conduites et on ouvre au plus près, plutôt que de creuser partout." },
+  { titre: "Fouilles pour canalisations", desc: "Tranchées pour poser ou remplacer une conduite d'eau, une évacuation ou des fourreaux — profondeur, pente et lit de pose selon le réseau à raccorder." },
+  { titre: "Fouilles de drainage", desc: "Ouverture le long d'un mur enterré pour poser un drain et évacuer l'eau qui stagne contre la maçonnerie, avec le gravier et le feutre qui vont avec." },
+  { titre: "Aménagement de talus", desc: "Reprofiler un terrain en pente : adoucir la pente, dégager l'accès à une façade enterrée, ou préparer l'emplacement d'un mur de soutènement." },
+  { titre: "Fouilles de fondation", desc: "Décapage de la terre végétale et creuse des fouilles selon les plans, avant coffrage — pour une construction neuve, une annexe ou un mur." },
+  { titre: "Remblayage et remise en état", desc: "Une fois les travaux faits, on referme : remblai compacté par couches, puis remise en état de la surface." },
+];
+
+const faq = [
+  {
+    q: "Comment savoir si j'ai une fuite d'eau enterrée ?",
+    a: "Le test le plus simple se fait sans nous : fermez tous les robinets de la maison, relevez le compteur le soir, relevez-le à nouveau le matin. S'il a bougé, il y a une fuite quelque part. Ensuite on cherche les indices en surface — une zone qui reste humide, un affaissement, de l'eau claire dans un regard. Ça suffit souvent à situer la fuite à quelques mètres près, ce qui évite d'ouvrir toute la parcelle.",
+  },
+  {
+    q: "Faut-il une autorisation pour terrasser sur son terrain ?",
+    a: "Pour une tranchée qu'on referme aussitôt, non. Dès qu'on modifie durablement la forme du terrain — un talus qu'on reprofile, un remblai important — ou qu'il faut ouvrir sur le domaine public, la commune doit être consultée. On vérifie ce point avec vous avant de commencer plutôt qu'après.",
+  },
+  {
+    q: "Vous savez où passent les conduites avant de creuser ?",
+    a: "On demande les plans des réseaux aux services concernés quand il y a un doute, et on repère ce qui se voit : regards, vannes, coffrets. Ça ne dispense pas de creuser prudemment à l'approche — les plans anciens ne sont pas toujours exacts, et il arrive qu'une conduite ne soit sur aucun plan.",
+  },
+  {
+    q: "Le terrain est-il remis en état après les travaux ?",
+    a: "Le remblai et le compactage font partie du travail. La finition de surface — gazon, dallage, goudron — se décide au moment du devis : on peut la reprendre, ou laisser la place nette pour l'entreprise qui s'en charge.",
+  },
+];
+---
+
+<Layout
+  title="Terrassement et fouilles — District de Morges | Urben Construction"
+  description="Recherche de fuite d'eau, aménagement de talus, fouilles pour drainage et canalisations dans le district de Morges. Visite sur place gratuite."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Terrassement et fouilles",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urben Construction",
+      "url": "https://urbenconstruction.ch",
+      "telephone": "+41218610155",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grancy",
+        "addressRegion": "Vaud",
+        "addressCountry": "CH"
+      }
+    },
+    "areaServed": "District de Morges, Vaud, Suisse",
+    "description": "Recherche de fuite d'eau, aménagement de talus, fouilles pour drainage et canalisations dans le district de Morges."
+  })} />
+
+  <Navbar />
+
+  <!-- HEADER -->
+  <section class="relative bg-gray-900 text-white pt-48 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/realisations/eclepens.jpg" alt="Terrassement et fouilles district de Morges" class="w-full h-full object-cover opacity-25" />
+    </div>
+    <div class="relative max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Domaines d'intervention</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-3xl">
+        Terrassement<br />et fouilles.
+      </h1>
+      <p class="text-gray-300 mt-6 text-lg max-w-xl">
+        Recherche de fuite, talus, tranchées de drainage et de canalisation — ouvrir le terrain là où il faut, et pas plus loin.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10">
+        <a href="/contact" class="btn-orange btn-orange-on-dark px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+          <span>Demander un devis gratuit</span>
+        </a>
+        <a href="tel:+41218610155" class="px-8 py-4 text-sm font-bold tracking-widest uppercase text-white border border-white/40 hover:border-white transition-colors rounded-sm">
+          +41 21 861 01 55
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Ce qu'on fait</p>
+      <h2 class="text-3xl font-bold mb-4">Le travail qui vient avant tous les autres.</h2>
+      <p class="text-gray-500 mb-14 max-w-xl">Presque tous les chantiers commencent par là : ouvrir, trouver, poser, refermer.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {prestations.map(p => (
+          <div class="bg-gray-50 rounded-xl p-6 border-t-2 border-[#FF7500]">
+            <h3 class="text-base font-bold mb-2">{p.titre}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO + TEXTE -->
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Notre approche</p>
+          <h2 class="text-3xl font-bold mb-6">Creuser peu, mais au bon endroit.</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Une pelle mécanique va vite, et c'est justement le risque. Ce qu'on casse en creusant — une conduite d'eau, un câble, un drain existant — coûte plus cher à réparer que la fouille elle-même. On prend donc le temps de repérer avant d'ouvrir.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Nous sommes deux : Stéphane et Alexandre. C'est l'un de nous qui vient voir le terrain, et l'un de nous qui conduit la machine. Vous n'aurez pas quelqu'un au téléphone et quelqu'un d'autre sur le chantier.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Zone d'intervention : district de Morges, Rolle, Aubonne, Cossonay et environs.</p>
+          <a href="/contact" class="btn-orange inline-block px-8 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+            <span>Prendre contact</span>
+          </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/realisations/lussery-villars.jpg" alt="Fouille de terrassement sur un chantier vaudois" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold tracking-widest uppercase text-[#FF7500] mb-4">Questions fréquentes</p>
+        <h2 class="text-3xl font-bold mb-12">Vos questions sur le terrassement.</h2>
+        <div class="space-y-0">
+          {faq.map(item => (
+            <details class="group border-t border-gray-200">
+              <summary class="flex items-center justify-between py-5 cursor-pointer list-none select-none gap-4">
+                <span class="text-sm font-semibold text-gray-900 leading-snug">{item.q}</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 group-open:hidden">+</span>
+                <span class="text-[#FF7500] font-bold text-xl leading-none w-5 text-center flex-shrink-0 hidden group-open:block">−</span>
+              </summary>
+              <p class="pb-6 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Un terrain à ouvrir ?</h2>
+      <p class="text-gray-400 mb-10">Visite sur place gratuite. Devis détaillé, sans engagement.</p>
+      <a href="/contact" class="btn-orange btn-orange-on-dark inline-block px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm">
+        <span>Demander une visite gratuite</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
