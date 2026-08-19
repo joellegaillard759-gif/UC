@@ -128,6 +128,10 @@ import Footer from '../components/Footer.astro';
           </form>
 
           <script>
+            // Formulaire → Formspree (le site est statique, pas de PHP côté Vercel).
+            // Remplacer FORMSPREE_ID par l'identifiant du formulaire créé sur formspree.io.
+            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/FORMSPREE_ID';
+
             const form = document.getElementById('contact-form');
             const btn = document.getElementById('submit-btn');
             const label = document.getElementById('submit-label');
@@ -144,13 +148,18 @@ import Footer from '../components/Footer.astro';
               const data = new FormData(form);
 
               try {
-                const res = await fetch('/contact.php', { method: 'POST', body: data });
-                const json = await res.json();
-                if (json.success) {
+                const res = await fetch(FORMSPREE_ENDPOINT, {
+                  method: 'POST',
+                  headers: { Accept: 'application/json' },
+                  body: data,
+                });
+
+                if (res.ok) {
                   successEl.classList.remove('hidden');
                   form.reset();
                 } else {
-                  errorEl.textContent = json.error || "Une erreur s'est produite.";
+                  const json = await res.json().catch(() => null);
+                  errorEl.textContent = json?.errors?.[0]?.message || "Une erreur s'est produite.";
                   errorEl.classList.remove('hidden');
                 }
               } catch {
